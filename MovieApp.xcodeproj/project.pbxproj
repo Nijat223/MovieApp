@@ -27,6 +27,10 @@
 		CAD982E12D1FB1E40071FEBF /* FavouriteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD982E02D1FB1E40071FEBF /* FavouriteCoordinator.swift */; };
 		CAD982E32D1FB2080071FEBF /* FavouriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD982E22D1FB2080071FEBF /* FavouriteViewModel.swift */; };
 		CAD982E52D1FB2290071FEBF /* FavouriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD982E42D1FB2290071FEBF /* FavouriteController.swift */; };
+		CAD982E92D229DE60071FEBF /* TrendingAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD982E82D229DE60071FEBF /* TrendingAPIService.swift */; };
+		CAD982EB2D229DF90071FEBF /* TrendingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD982EA2D229DF90071FEBF /* TrendingUseCase.swift */; };
+		CAD982ED2D229E0E0071FEBF /* TrendingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD982EC2D229E0E0071FEBF /* TrendingHelper.swift */; };
+		CAD982F02D268EEE0071FEBF /* MovieDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD982EF2D268EEE0071FEBF /* MovieDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +75,10 @@
 		CAD982E02D1FB1E40071FEBF /* FavouriteCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCoordinator.swift; sourceTree = "<group>"; };
 		CAD982E22D1FB2080071FEBF /* FavouriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewModel.swift; sourceTree = "<group>"; };
 		CAD982E42D1FB2290071FEBF /* FavouriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteController.swift; sourceTree = "<group>"; };
+		CAD982E82D229DE60071FEBF /* TrendingAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingAPIService.swift; sourceTree = "<group>"; };
+		CAD982EA2D229DF90071FEBF /* TrendingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingUseCase.swift; sourceTree = "<group>"; };
+		CAD982EC2D229E0E0071FEBF /* TrendingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingHelper.swift; sourceTree = "<group>"; };
+		CAD982EF2D268EEE0071FEBF /* MovieDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +160,7 @@
 		CAD982B92D1B0E8B0071FEBF /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				CAD982E72D229DC90071FEBF /* Trending */,
 				CAD982CA2D1B121A0071FEBF /* Core */,
 			);
 			path = Network;
@@ -231,6 +240,7 @@
 		CAD982D92D1E659D0071FEBF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CAD982EE2D268ED30071FEBF /* Models */,
 				CAD982DA2D1E65CE0071FEBF /* HomeCoordinator.swift */,
 				CAD982DC2D1E66900071FEBF /* ViewModules */,
 			);
@@ -262,6 +272,24 @@
 				CAD982E42D1FB2290071FEBF /* FavouriteController.swift */,
 			);
 			path = ViewModules;
+			sourceTree = "<group>";
+		};
+		CAD982E72D229DC90071FEBF /* Trending */ = {
+			isa = PBXGroup;
+			children = (
+				CAD982EC2D229E0E0071FEBF /* TrendingHelper.swift */,
+				CAD982EA2D229DF90071FEBF /* TrendingUseCase.swift */,
+				CAD982E82D229DE60071FEBF /* TrendingAPIService.swift */,
+			);
+			path = Trending;
+			sourceTree = "<group>";
+		};
+		CAD982EE2D268ED30071FEBF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CAD982EF2D268EEE0071FEBF /* MovieDTO.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,14 +428,18 @@
 				CAD982CB2D1B121A0071FEBF /* CoreAPIHelper.swift in Sources */,
 				CAD9828C2D1B0D1E0071FEBF /* HomeController.swift in Sources */,
 				CAD982D52D1E5CCA0071FEBF /* HomeTabBarCoordinator.swift in Sources */,
+				CAD982ED2D229E0E0071FEBF /* TrendingHelper.swift in Sources */,
 				CAD982DB2D1E65CE0071FEBF /* HomeCoordinator.swift in Sources */,
 				CAD982CD2D1B121A0071FEBF /* CoreErrorModel.swift in Sources */,
+				CAD982EB2D229DF90071FEBF /* TrendingUseCase.swift in Sources */,
 				CAD982882D1B0D1E0071FEBF /* AppDelegate.swift in Sources */,
 				CAD982C22D1B0FA10071FEBF /* LayoutExtension.swift in Sources */,
 				CAD982D22D1B165C0071FEBF /* SceneDelegate.swift in Sources */,
 				CAD982CC2D1B121A0071FEBF /* CoreAPIManager.swift in Sources */,
+				CAD982F02D268EEE0071FEBF /* MovieDTO.swift in Sources */,
 				CAD982C02D1B0F720071FEBF /* Extensions.swift in Sources */,
 				CAD982C42D1B10330071FEBF /* BaseViewController.swift in Sources */,
+				CAD982E92D229DE60071FEBF /* TrendingAPIService.swift in Sources */,
 				CAD982DE2D1E66BA0071FEBF /* HomeViewModel.swift in Sources */,
 				CAD982E52D1FB2290071FEBF /* FavouriteController.swift in Sources */,
 				CAD982E12D1FB1E40071FEBF /* FavouriteCoordinator.swift in Sources */,
