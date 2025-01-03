@@ -7,233 +7,221 @@
 
 import Foundation
 import UIKit
+//import SDWebImage
 
-extension UITextField {
-    
-    func setCardNumberFormatting() {
-        self.keyboardType = .numberPad
-        self.addTarget(self, action: #selector(formatCardNumber), for: .editingChanged)
-    }
-    
-    @objc private func formatCardNumber() {
-        guard var text = self.text?.replacingOccurrences(of: " ", with: "") else { return }
-        
-        if text.count > 16 {
-            text = String(text.prefix(16))
-        }
-        
-        let formattedText = text.enumerated().map { index, character in
-            return index % 4 == 0 && index > 0 ? " \(character)" : "\(character)"
-        }.joined()
-        
-        self.text = formattedText
-    }
-
-    
-    func setCardExpirationDateFormatting() {
-        self.keyboardType = .numberPad
-        self.addTarget(self, action: #selector(formatExpirationDate), for: .editingChanged)
-    }
-    
-    @objc private func formatExpirationDate() {
-        guard var text = self.text?.replacingOccurrences(of: "/", with: "") else { return }
-        
-        if text.count > 6 {
-            text = String(text.prefix(6))
-        }
-        
-        if text.count > 2 {
-            text.insert("/", at: text.index(text.startIndex, offsetBy: 2))
-        }
-        
-        self.text = text
-    }
-    
-    func setCVVFormat() {
-        self.keyboardType = .numberPad
-        self.addTarget(self, action: #selector(formatCVV), for: .editingChanged)
-    }
-    
-    @objc private func formatCVV() {
-        guard var text = self.text else { return }
-        
-        if text.count > 3 {
-            text = String(text.prefix(3))
-        }
-        self.text = text
+extension Double {
+    func convertToString() -> String {
+        return String(self)
     }
 }
 
-extension UIImage {
-    func resize(to size: CGSize) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
-        draw(in: CGRect(origin: .zero, size: size))
-        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return resizedImage
+extension Int {
+    func convertToString() -> String {
+        return String(self)
     }
 }
 
-
-
-extension UITextField {
-    func setLeftPadding(_ amount: CGFloat) {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.height))
-        self.leftView = paddingView
-        self.leftViewMode = .always
+extension UITableView {
+    
+    func setTableHeaderView(headerView: UIView) {
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.tableHeaderView = headerView
+        
+        headerView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        headerView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        headerView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+    }
+    
+    func updateHeaderViewFrame() {
+        guard let headerView = self.tableHeaderView else { return }
+        
+        headerView.layoutIfNeeded()
+        
+        let header = self.tableHeaderView
+        self.tableHeaderView = header
+    }
+    
+    func setBottomInset(to value: CGFloat) {
+        let edgeInset = UIEdgeInsets(top: 0, left: 0, bottom: value, right: 0)
+        
+        self.contentInset = edgeInset
+        self.scrollIndicatorInsets = edgeInset
     }
 }
 
+extension UITableViewCell {
+    
+    static var reuseIdentifier: String {
+        return NSStringFromClass(self)
+    }
+    
+}
+extension UITableView {
+    
+    public func register<T: UITableViewCell>(cellClass: T.Type) {
+        register(cellClass, forCellReuseIdentifier: cellClass.reuseIdentifier)
+    }
+}
 
-extension String {
-    func isValidEmail() -> Bool {
-        let emailRegex = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
-        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
-        return emailPredicate.evaluate(with: self)
+extension UITableView {
+    
+    public func dequeue<T: UITableViewCell>(cellClass: T.Type) -> T? {
+        return dequeueReusableCell(withIdentifier: cellClass.reuseIdentifier) as? T
     }
     
-    func isValidName() -> Bool {
-        let nameRegex = "^[A-Za-z]{3,}$"
-        let namePredicate = NSPredicate(format: "SELF MATCHES %@", nameRegex)
-        return namePredicate.evaluate(with: self)
-    }
-    
-    
-    func isValidLastname() -> Bool {
-        let nameRegex = "^[A-Za-z]{3,}$"
-        let namePredicate = NSPredicate(format: "SELF MATCHES %@", nameRegex)
-        return namePredicate.evaluate(with: self)
-    }
-    
-    func isValidFinCode() -> Bool {
-           let finCodeRegex = "^[A-Z0-9]{7}$"
-           let finCodePredicate = NSPredicate(format: "SELF MATCHES %@", finCodeRegex)
-           return finCodePredicate.evaluate(with: self)
-       }
-    
-  
-        func isValidPhoneNumber() -> Bool {
-            let phoneRegex = "^(99450|99451|99410|99455|99499|99470|99477)[0-9]{7}$"
-            let phonePredicate = NSPredicate(format: "SELF MATCHES %@", phoneRegex)
-            return phonePredicate.evaluate(with: self)
+    public func dequeue<T: UITableViewCell>(
+        cellClass: T.Type,
+        forIndexPath indexPath: IndexPath
+    ) -> T {
+        guard let cell = dequeueReusableCell(
+            withIdentifier: cellClass.reuseIdentifier,
+            for: indexPath) as? T else {
+            fatalError(
+                "Error: cell with id: \(cellClass.reuseIdentifier) for indexPath: \(indexPath) is not \(T.self)")
         }
-    
-    func isValidPass() -> Bool {
-
-                return self.count >= 8
-    }
-    
-    func isValidCVV() -> Bool {
-
-                return self.count == 3
-    }
-    
-    
-    func isVisaCard() -> Bool {
-        let visaRegex = "^4[0-9]{12,15}$"
-        let visaPredicate = NSPredicate(format: "SELF MATCHES %@", visaRegex)
-        return visaPredicate.evaluate(with: self.trimmingCharacters(in: .whitespacesAndNewlines))
-    }
-
-        
-        func isMasterCard() -> Bool {
-            let masterCardRegex = "^5[1-5][0-9]{14}$"
-            let masterCardPredicate = NSPredicate(format: "SELF MATCHES %@", masterCardRegex)
-            return masterCardPredicate.evaluate(with: self)
-        }
-        
-        func isValidPAN() -> Bool {
-            let panRegex = "^[0-9]{16}$" // PANs are typically 16 digits long
-            let panPredicate = NSPredicate(format: "SELF MATCHES %@", panRegex)
-            return panPredicate.evaluate(with: self)
-        }
-    
-    func isValidExpirationDate() -> Bool {
-        let dateRegex = "^(0[1-9]|1[0-2])/\\d{4}$" // Format MM/YYYY
-        let datePredicate = NSPredicate(format: "SELF MATCHES %@", dateRegex)
-        
-        guard datePredicate.evaluate(with: self) else {
-            return false // Does not match MM/YYYY format
-        }
-        
-        let components = self.split(separator: "/")
-        guard components.count == 2,
-              let month = Int(components[0]),
-              let year = Int(components[1]) else {
-            return false
-        }
-        
-        let currentDate = Date()
-        let calendar = Calendar.current
-        
-        let currentYear = calendar.component(.year, from: currentDate)
-        let currentMonth = calendar.component(.month, from: currentDate)
-        
-        if year > currentYear || (year == currentYear && month >= currentMonth) {
-            return true
-        } else {
-            return false
-        }
+        return cell
     }
     
 }
 
-
-
-
-
-extension UILabel {
-    func setLeftPaddingForLabel(_ amount: CGFloat) {
-        let padding = UIEdgeInsets(top: 0, left: amount, bottom: 0, right: 0)
-        self.drawText(in: self.bounds.inset(by: padding))
+extension UICollectionReusableView {
+    static var reuseIdentifier: String {
+        return String(describing: Self.self)
     }
 }
 
+extension UICollectionView {
+    func register<T: UICollectionViewCell>(cell: T.Type) {
+        register(T.self, forCellWithReuseIdentifier: T.reuseIdentifier)
+    }
+    
+    func register<T: UICollectionReusableView>(header: T.Type) {
+        
+        register(
+            T.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: T.reuseIdentifier)
+    }
+    
+    func register<T: UICollectionReusableView>(footer: T.Type) {
+        register(
+            T.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+            withReuseIdentifier: T.reuseIdentifier)
+    }
+    
+}
 
-
-extension UIButton {
-    func setUnderlinedTitle(_ title: String, color: UIColor = .systemBlue) {
-        let attributes: [NSAttributedString.Key: Any] = [
-            .underlineStyle: NSUnderlineStyle.single.rawValue,
-            .foregroundColor: color
-        ]
-        let attributedTitle = NSAttributedString(string: title, attributes: attributes)
-        self.setAttributedTitle(attributedTitle, for: .normal)
+extension UICollectionView {
+    func dequeue<T: UICollectionViewCell>(for indexPath: IndexPath) -> T {
+        return dequeueReusableCell(
+            withReuseIdentifier: T.reuseIdentifier,
+            for: indexPath
+        ) as! T
     }
 }
 
-
-
-extension UITextField {
-    func setPlaceholder(text: String, color: UIColor, alpha: CGFloat = 1) {
-        let attributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: color.withAlphaComponent(alpha)
-        ]
-        self.attributedPlaceholder = NSAttributedString(string: text, attributes: attributes)
+extension UICollectionView {
+    // Existing code for registering cells and supplementary views
+    
+    func dequeue<T: UICollectionReusableView>(
+        header: T.Type,
+        for indexPath: IndexPath
+    ) -> T {
+        return dequeueReusableSupplementaryView(
+            ofKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: T.reuseIdentifier,
+            for: indexPath
+        ) as! T
     }
-}
-
-
-extension UIView {
-    func addViews(view:[UIView]){
-        view.forEach {self.addSubview($0)}
+    
+    func dequeue<T: UICollectionReusableView>(
+        footer: T.Type,
+        for indexPath: IndexPath
+    ) -> T {
+        return dequeueReusableSupplementaryView(
+            ofKind: UICollectionView.elementKindSectionFooter,
+            withReuseIdentifier: T.reuseIdentifier,
+            for: indexPath
+        ) as! T
     }
 }
 
 
 extension UIViewController {
-    func showAlert(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alertController, animated: true, completion: nil)
+    func showMessage(
+        title: String = "",
+        message: String = "",
+        actionTitle: String = "OK"
+    ) {
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: UIAlertController.Style.alert
+        )
+        alert.addAction(UIAlertAction(title: actionTitle, style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
-
 }
 
-//extension UIImageView {
-//    func loadImageURL(url: String) {
-//        guard let url = URL(string: url) else {return}
-////        print(#function, url)
-//        self.sd_setImage(with: url)
-//    }
-//}
+extension UIView {
+    func addSubViews(_ views: UIView ...) {
+        views.forEach({addSubview($0)})
+    }
+}
+
+extension UIStackView {
+    func addArrangedSubviews(_ views: UIView ...) {
+        
+    }
+}
+extension String {
+    func isValidPassword() -> Bool {
+        count > 8
+    }
+    
+    func isValidEmailMask() -> Bool  {
+        count > 5
+    }
+    
+    func isValidEmail() -> Bool {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegex)
+        return emailPredicate.evaluate(with: self)
+    }
+    
+    func isValidName() -> Bool {
+        count > 2
+    }
+}
+
+extension UIImageView {
+    func loadImageURL(url: String) {
+        guard let url = URL(string: url) else {return}
+//        print(#function, url)
+        self.sd_setImage(with: url)
+    }
+}
+
+extension UIEdgeInsets {
+    // Initialize UIEdgeInsets with equal padding for all sides
+    public init(all value: CGFloat) {
+        self = .init(top: value, left: value, bottom: -value, right: -value)
+    }
+    
+    // Initialize UIEdgeInsets with individual padding values for each side
+    public init(top: CGFloat = 0, leading: CGFloat = 0, bottom: CGFloat = 0, trailing: CGFloat = 0) {
+        self = .init(top: top, left: leading, bottom: bottom, right: trailing)
+    }
+    
+    // Initialize UIEdgeInsets with equal vertical and horizontal padding
+    public init(y: CGFloat = 0, x: CGFloat = 0) {
+        self = .init(top: y, left: x, bottom: -y, right: -x)
+    }
+    
+    // Initialize UIEdgeInsets with specified top, horizontal, and bottom padding
+    public init(top: CGFloat = 0, x: CGFloat, bottom: CGFloat = 0) {
+        self = .init(top: top, left: x, bottom: bottom, right: -x)
+    }
+}

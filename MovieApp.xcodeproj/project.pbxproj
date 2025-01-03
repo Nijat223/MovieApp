@@ -31,6 +31,8 @@
 		CAD982EB2D229DF90071FEBF /* TrendingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD982EA2D229DF90071FEBF /* TrendingUseCase.swift */; };
 		CAD982ED2D229E0E0071FEBF /* TrendingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD982EC2D229E0E0071FEBF /* TrendingHelper.swift */; };
 		CAD982F02D268EEE0071FEBF /* MovieDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD982EF2D268EEE0071FEBF /* MovieDTO.swift */; };
+		CAD982F32D27E1A30071FEBF /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD982F22D27E1A30071FEBF /* MovieCell.swift */; };
+		CAD982F62D27F0140071FEBF /* HomeLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD982F52D27F0140071FEBF /* HomeLayouts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		CAD982EA2D229DF90071FEBF /* TrendingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingUseCase.swift; sourceTree = "<group>"; };
 		CAD982EC2D229E0E0071FEBF /* TrendingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingHelper.swift; sourceTree = "<group>"; };
 		CAD982EF2D268EEE0071FEBF /* MovieDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDTO.swift; sourceTree = "<group>"; };
+		CAD982F22D27E1A30071FEBF /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		CAD982F52D27F0140071FEBF /* HomeLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLayouts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +244,7 @@
 		CAD982D92D1E659D0071FEBF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CAD982F12D27E17F0071FEBF /* Views */,
 				CAD982EE2D268ED30071FEBF /* Models */,
 				CAD982DA2D1E65CE0071FEBF /* HomeCoordinator.swift */,
 				CAD982DC2D1E66900071FEBF /* ViewModules */,
@@ -290,6 +295,23 @@
 				CAD982EF2D268EEE0071FEBF /* MovieDTO.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CAD982F12D27E17F0071FEBF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CAD982F42D27EFFD0071FEBF /* Layouts */,
+				CAD982F22D27E1A30071FEBF /* MovieCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CAD982F42D27EFFD0071FEBF /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				CAD982F52D27F0140071FEBF /* HomeLayouts.swift */,
+			);
+			path = Layouts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +450,7 @@
 				CAD982CB2D1B121A0071FEBF /* CoreAPIHelper.swift in Sources */,
 				CAD9828C2D1B0D1E0071FEBF /* HomeController.swift in Sources */,
 				CAD982D52D1E5CCA0071FEBF /* HomeTabBarCoordinator.swift in Sources */,
+				CAD982F62D27F0140071FEBF /* HomeLayouts.swift in Sources */,
 				CAD982ED2D229E0E0071FEBF /* TrendingHelper.swift in Sources */,
 				CAD982DB2D1E65CE0071FEBF /* HomeCoordinator.swift in Sources */,
 				CAD982CD2D1B121A0071FEBF /* CoreErrorModel.swift in Sources */,
@@ -438,6 +461,7 @@
 				CAD982CC2D1B121A0071FEBF /* CoreAPIManager.swift in Sources */,
 				CAD982F02D268EEE0071FEBF /* MovieDTO.swift in Sources */,
 				CAD982C02D1B0F720071FEBF /* Extensions.swift in Sources */,
+				CAD982F32D27E1A30071FEBF /* MovieCell.swift in Sources */,
 				CAD982C42D1B10330071FEBF /* BaseViewController.swift in Sources */,
 				CAD982E92D229DE60071FEBF /* TrendingAPIService.swift in Sources */,
 				CAD982DE2D1E66BA0071FEBF /* HomeViewModel.swift in Sources */,
