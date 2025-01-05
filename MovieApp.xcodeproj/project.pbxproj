@@ -45,6 +45,22 @@
 		CAD983112D2AB1440071FEBF /* AuthNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983102D2AB1440071FEBF /* AuthNavigation.swift */; };
 		CAD983152D2AB2C20071FEBF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983142D2AB2C20071FEBF /* LoginController.swift */; };
 		CAD983172D2AB2D60071FEBF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983162D2AB2D60071FEBF /* LoginViewModel.swift */; };
+		CAD983192D2B11AC0071FEBF /* NowPlayingDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983182D2B11AC0071FEBF /* NowPlayingDTO.swift */; };
+		CAD9831B2D2B133A0071FEBF /* PopularDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9831A2D2B133A0071FEBF /* PopularDTO.swift */; };
+		CAD9831D2D2B14460071FEBF /* TopRatedDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9831C2D2B14460071FEBF /* TopRatedDTO.swift */; };
+		CAD9831F2D2B14AD0071FEBF /* UpcomingDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9831E2D2B14AD0071FEBF /* UpcomingDTO.swift */; };
+		CAD983252D2B16170071FEBF /* NowPlayingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983242D2B16170071FEBF /* NowPlayingHelper.swift */; };
+		CAD983272D2B162C0071FEBF /* NowPlayingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983262D2B162C0071FEBF /* NowPlayingUseCase.swift */; };
+		CAD983292D2B16450071FEBF /* NowPlayingAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983282D2B16450071FEBF /* NowPlayingAPIService.swift */; };
+		CAD9832B2D2B16880071FEBF /* PopularHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9832A2D2B16880071FEBF /* PopularHelper.swift */; };
+		CAD9832D2D2B16A10071FEBF /* PopularUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9832C2D2B16A10071FEBF /* PopularUseCase.swift */; };
+		CAD9832F2D2B16B50071FEBF /* PopularAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9832E2D2B16B50071FEBF /* PopularAPIService.swift */; };
+		CAD983312D2B16D70071FEBF /* TopRatedHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983302D2B16D70071FEBF /* TopRatedHelper.swift */; };
+		CAD983332D2B16E60071FEBF /* TopRatedUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983322D2B16E60071FEBF /* TopRatedUseCase.swift */; };
+		CAD983352D2B16F80071FEBF /* TopRatedAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983342D2B16F80071FEBF /* TopRatedAPIService.swift */; };
+		CAD983372D2B17160071FEBF /* UpcomingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983362D2B17160071FEBF /* UpcomingHelper.swift */; };
+		CAD983392D2B17260071FEBF /* UpcomingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983382D2B17260071FEBF /* UpcomingUseCase.swift */; };
+		CAD9833B2D2B17390071FEBF /* UpcomingAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9833A2D2B17390071FEBF /* UpcomingAPIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +118,22 @@
 		CAD983102D2AB1440071FEBF /* AuthNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigation.swift; sourceTree = "<group>"; };
 		CAD983142D2AB2C20071FEBF /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		CAD983162D2AB2D60071FEBF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		CAD983182D2B11AC0071FEBF /* NowPlayingDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingDTO.swift; sourceTree = "<group>"; };
+		CAD9831A2D2B133A0071FEBF /* PopularDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDTO.swift; sourceTree = "<group>"; };
+		CAD9831C2D2B14460071FEBF /* TopRatedDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedDTO.swift; sourceTree = "<group>"; };
+		CAD9831E2D2B14AD0071FEBF /* UpcomingDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingDTO.swift; sourceTree = "<group>"; };
+		CAD983242D2B16170071FEBF /* NowPlayingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingHelper.swift; sourceTree = "<group>"; };
+		CAD983262D2B162C0071FEBF /* NowPlayingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingUseCase.swift; sourceTree = "<group>"; };
+		CAD983282D2B16450071FEBF /* NowPlayingAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingAPIService.swift; sourceTree = "<group>"; };
+		CAD9832A2D2B16880071FEBF /* PopularHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularHelper.swift; sourceTree = "<group>"; };
+		CAD9832C2D2B16A10071FEBF /* PopularUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularUseCase.swift; sourceTree = "<group>"; };
+		CAD9832E2D2B16B50071FEBF /* PopularAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularAPIService.swift; sourceTree = "<group>"; };
+		CAD983302D2B16D70071FEBF /* TopRatedHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedHelper.swift; sourceTree = "<group>"; };
+		CAD983322D2B16E60071FEBF /* TopRatedUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedUseCase.swift; sourceTree = "<group>"; };
+		CAD983342D2B16F80071FEBF /* TopRatedAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedAPIService.swift; sourceTree = "<group>"; };
+		CAD983362D2B17160071FEBF /* UpcomingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingHelper.swift; sourceTree = "<group>"; };
+		CAD983382D2B17260071FEBF /* UpcomingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingUseCase.swift; sourceTree = "<group>"; };
+		CAD9833A2D2B17390071FEBF /* UpcomingAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingAPIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +223,10 @@
 			isa = PBXGroup;
 			children = (
 				CAD982E72D229DC90071FEBF /* Trending */,
+				CAD983202D2B15860071FEBF /* NowPlaying */,
+				CAD983212D2B15A70071FEBF /* Popular */,
+				CAD983222D2B15B80071FEBF /* TopRated */,
+				CAD983232D2B15C60071FEBF /* Upcoming */,
 				CAD982CA2D1B121A0071FEBF /* Core */,
 			);
 			path = Network;
@@ -324,6 +360,10 @@
 			isa = PBXGroup;
 			children = (
 				CAD982EF2D268EEE0071FEBF /* MovieDTO.swift */,
+				CAD983182D2B11AC0071FEBF /* NowPlayingDTO.swift */,
+				CAD9831A2D2B133A0071FEBF /* PopularDTO.swift */,
+				CAD9831C2D2B14460071FEBF /* TopRatedDTO.swift */,
+				CAD9831E2D2B14AD0071FEBF /* UpcomingDTO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -399,6 +439,46 @@
 			children = (
 			);
 			path = RegisterController;
+			sourceTree = "<group>";
+		};
+		CAD983202D2B15860071FEBF /* NowPlaying */ = {
+			isa = PBXGroup;
+			children = (
+				CAD983242D2B16170071FEBF /* NowPlayingHelper.swift */,
+				CAD983262D2B162C0071FEBF /* NowPlayingUseCase.swift */,
+				CAD983282D2B16450071FEBF /* NowPlayingAPIService.swift */,
+			);
+			path = NowPlaying;
+			sourceTree = "<group>";
+		};
+		CAD983212D2B15A70071FEBF /* Popular */ = {
+			isa = PBXGroup;
+			children = (
+				CAD9832A2D2B16880071FEBF /* PopularHelper.swift */,
+				CAD9832C2D2B16A10071FEBF /* PopularUseCase.swift */,
+				CAD9832E2D2B16B50071FEBF /* PopularAPIService.swift */,
+			);
+			path = Popular;
+			sourceTree = "<group>";
+		};
+		CAD983222D2B15B80071FEBF /* TopRated */ = {
+			isa = PBXGroup;
+			children = (
+				CAD983302D2B16D70071FEBF /* TopRatedHelper.swift */,
+				CAD983322D2B16E60071FEBF /* TopRatedUseCase.swift */,
+				CAD983342D2B16F80071FEBF /* TopRatedAPIService.swift */,
+			);
+			path = TopRated;
+			sourceTree = "<group>";
+		};
+		CAD983232D2B15C60071FEBF /* Upcoming */ = {
+			isa = PBXGroup;
+			children = (
+				CAD983362D2B17160071FEBF /* UpcomingHelper.swift */,
+				CAD983382D2B17260071FEBF /* UpcomingUseCase.swift */,
+				CAD9833A2D2B17390071FEBF /* UpcomingAPIService.swift */,
+			);
+			path = Upcoming;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -544,8 +624,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAD982D32D1B165C0071FEBF /* AppCoordinator.swift in Sources */,
+				CAD983372D2B17160071FEBF /* UpcomingHelper.swift in Sources */,
+				CAD983292D2B16450071FEBF /* NowPlayingAPIService.swift in Sources */,
+				CAD9831F2D2B14AD0071FEBF /* UpcomingDTO.swift in Sources */,
+				CAD9833B2D2B17390071FEBF /* UpcomingAPIService.swift in Sources */,
 				CAD982D82D1E60970071FEBF /* TabBarController.swift in Sources */,
+				CAD983272D2B162C0071FEBF /* NowPlayingUseCase.swift in Sources */,
+				CAD983392D2B17260071FEBF /* UpcomingUseCase.swift in Sources */,
+				CAD9831D2D2B14460071FEBF /* TopRatedDTO.swift in Sources */,
+				CAD9832D2D2B16A10071FEBF /* PopularUseCase.swift in Sources */,
 				CAD982E32D1FB2080071FEBF /* FavouriteViewModel.swift in Sources */,
+				CAD983312D2B16D70071FEBF /* TopRatedHelper.swift in Sources */,
 				CAD982CB2D1B121A0071FEBF /* CoreAPIHelper.swift in Sources */,
 				CAD9828C2D1B0D1E0071FEBF /* HomeController.swift in Sources */,
 				CAD982D52D1E5CCA0071FEBF /* HomeTabBarCoordinator.swift in Sources */,
@@ -556,22 +645,29 @@
 				CAD982CD2D1B121A0071FEBF /* CoreErrorModel.swift in Sources */,
 				CAD982EB2D229DF90071FEBF /* TrendingUseCase.swift in Sources */,
 				CAD982882D1B0D1E0071FEBF /* AppDelegate.swift in Sources */,
+				CAD9832B2D2B16880071FEBF /* PopularHelper.swift in Sources */,
+				CAD983332D2B16E60071FEBF /* TopRatedUseCase.swift in Sources */,
 				CAD983152D2AB2C20071FEBF /* LoginController.swift in Sources */,
 				CAD983002D2844830071FEBF /* SectionHeader.swift in Sources */,
+				CAD983192D2B11AC0071FEBF /* NowPlayingDTO.swift in Sources */,
 				CAD982C22D1B0FA10071FEBF /* LayoutExtension.swift in Sources */,
 				CAD982D22D1B165C0071FEBF /* SceneDelegate.swift in Sources */,
 				CAD982CC2D1B121A0071FEBF /* CoreAPIManager.swift in Sources */,
 				CAD9830F2D2AB1140071FEBF /* AuthCoordinator.swift in Sources */,
 				CAD982F02D268EEE0071FEBF /* MovieDTO.swift in Sources */,
+				CAD9831B2D2B133A0071FEBF /* PopularDTO.swift in Sources */,
 				CAD982C02D1B0F720071FEBF /* Extensions.swift in Sources */,
 				CAD982F32D27E1A30071FEBF /* MovieCell.swift in Sources */,
 				CAD982C42D1B10330071FEBF /* BaseViewController.swift in Sources */,
 				CAD982E92D229DE60071FEBF /* TrendingAPIService.swift in Sources */,
+				CAD9832F2D2B16B50071FEBF /* PopularAPIService.swift in Sources */,
 				CAD982DE2D1E66BA0071FEBF /* HomeViewModel.swift in Sources */,
 				CAD982E52D1FB2290071FEBF /* FavouriteController.swift in Sources */,
 				CAD982E12D1FB1E40071FEBF /* FavouriteCoordinator.swift in Sources */,
 				CAD983112D2AB1440071FEBF /* AuthNavigation.swift in Sources */,
 				CAD982D12D1B165C0071FEBF /* Coordinator.swift in Sources */,
+				CAD983252D2B16170071FEBF /* NowPlayingHelper.swift in Sources */,
+				CAD983352D2B16F80071FEBF /* TopRatedAPIService.swift in Sources */,
 				CAD982FE2D2840570071FEBF /* TrandingSectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
