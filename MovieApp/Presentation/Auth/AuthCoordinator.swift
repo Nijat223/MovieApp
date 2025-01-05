@@ -31,5 +31,9 @@ extension AuthCoordinator: AuthNavigation {
     func showRegister() {
         print(#function)
     }
-    
+    func showHome() {
+        let coor = parentCoordinator as! AppCoordinator
+        coor.isLogin = true
+        coor.start()
+    }
 }

@@ -9,4 +9,5 @@ import Foundation
 
 protocol AuthNavigation: AnyObject {
     func showRegister()
+    func showHome()
 }
