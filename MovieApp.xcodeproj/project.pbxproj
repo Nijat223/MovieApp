@@ -41,6 +41,10 @@
 		CAD983062D29626A0071FEBF /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = CAD983052D29626A0071FEBF /* FirebaseCore */; };
 		CAD983082D29647E0071FEBF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CAD983072D29647E0071FEBF /* FirebaseFirestore */; };
 		CAD9830A2D2964970071FEBF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CAD983092D2964970071FEBF /* FirebaseAuth */; };
+		CAD9830F2D2AB1140071FEBF /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9830E2D2AB1140071FEBF /* AuthCoordinator.swift */; };
+		CAD983112D2AB1440071FEBF /* AuthNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983102D2AB1440071FEBF /* AuthNavigation.swift */; };
+		CAD983152D2AB2C20071FEBF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983142D2AB2C20071FEBF /* LoginController.swift */; };
+		CAD983172D2AB2D60071FEBF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983162D2AB2D60071FEBF /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +98,10 @@
 		CAD982FD2D2840570071FEBF /* TrandingSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrandingSectionCell.swift; sourceTree = "<group>"; };
 		CAD982FF2D2844830071FEBF /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		CAD983012D2960B20071FEBF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CAD9830E2D2AB1140071FEBF /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		CAD983102D2AB1440071FEBF /* AuthNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigation.swift; sourceTree = "<group>"; };
+		CAD983142D2AB2C20071FEBF /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		CAD983162D2AB2D60071FEBF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +227,11 @@
 		CAD982BE2D1B0F230071FEBF /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				CAD9830E2D2AB1140071FEBF /* AuthCoordinator.swift */,
+				CAD983102D2AB1440071FEBF /* AuthNavigation.swift */,
+				CAD9830D2D2AB0670071FEBF /* Models */,
+				CAD9830C2D2AB04C0071FEBF /* ViewModules */,
+				CAD9830B2D2AB0410071FEBF /* Views */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -347,6 +360,45 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CAD9830B2D2AB0410071FEBF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CAD9830C2D2AB04C0071FEBF /* ViewModules */ = {
+			isa = PBXGroup;
+			children = (
+				CAD983132D2AB25D0071FEBF /* RegisterController */,
+				CAD983122D2AB1E30071FEBF /* LoginController */,
+			);
+			path = ViewModules;
+			sourceTree = "<group>";
+		};
+		CAD9830D2D2AB0670071FEBF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CAD983122D2AB1E30071FEBF /* LoginController */ = {
+			isa = PBXGroup;
+			children = (
+				CAD983142D2AB2C20071FEBF /* LoginController.swift */,
+				CAD983162D2AB2D60071FEBF /* LoginViewModel.swift */,
+			);
+			path = LoginController;
+			sourceTree = "<group>";
+		};
+		CAD983132D2AB25D0071FEBF /* RegisterController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RegisterController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,14 +551,17 @@
 				CAD982D52D1E5CCA0071FEBF /* HomeTabBarCoordinator.swift in Sources */,
 				CAD982F62D27F0140071FEBF /* HomeLayouts.swift in Sources */,
 				CAD982ED2D229E0E0071FEBF /* TrendingHelper.swift in Sources */,
+				CAD983172D2AB2D60071FEBF /* LoginViewModel.swift in Sources */,
 				CAD982DB2D1E65CE0071FEBF /* HomeCoordinator.swift in Sources */,
 				CAD982CD2D1B121A0071FEBF /* CoreErrorModel.swift in Sources */,
 				CAD982EB2D229DF90071FEBF /* TrendingUseCase.swift in Sources */,
 				CAD982882D1B0D1E0071FEBF /* AppDelegate.swift in Sources */,
+				CAD983152D2AB2C20071FEBF /* LoginController.swift in Sources */,
 				CAD983002D2844830071FEBF /* SectionHeader.swift in Sources */,
 				CAD982C22D1B0FA10071FEBF /* LayoutExtension.swift in Sources */,
 				CAD982D22D1B165C0071FEBF /* SceneDelegate.swift in Sources */,
 				CAD982CC2D1B121A0071FEBF /* CoreAPIManager.swift in Sources */,
+				CAD9830F2D2AB1140071FEBF /* AuthCoordinator.swift in Sources */,
 				CAD982F02D268EEE0071FEBF /* MovieDTO.swift in Sources */,
 				CAD982C02D1B0F720071FEBF /* Extensions.swift in Sources */,
 				CAD982F32D27E1A30071FEBF /* MovieCell.swift in Sources */,
@@ -515,6 +570,7 @@
 				CAD982DE2D1E66BA0071FEBF /* HomeViewModel.swift in Sources */,
 				CAD982E52D1FB2290071FEBF /* FavouriteController.swift in Sources */,
 				CAD982E12D1FB1E40071FEBF /* FavouriteCoordinator.swift in Sources */,
+				CAD983112D2AB1440071FEBF /* AuthNavigation.swift in Sources */,
 				CAD982D12D1B165C0071FEBF /* Coordinator.swift in Sources */,
 				CAD982FE2D2840570071FEBF /* TrandingSectionCell.swift in Sources */,
 			);

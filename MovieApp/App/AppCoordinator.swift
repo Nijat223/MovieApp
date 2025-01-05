@@ -9,29 +9,40 @@ import Foundation
 import UIKit.UINavigationController
 
 final class AppCoordinator: Coordinator {
-    var parentCoordinator: (any Coordinator)?
+    var parentCoordinator: Coordinator?
     
     var children: [Coordinator] = []
     
     var navigationController: UINavigationController
     
-    var isLogin: Bool = false
+    var isLogin: Bool = true
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     func start() {
-        showMain()
+        if isLogin {
+            showHome()
+        } else {
+            showAuth()
+        }
     }
     
-    fileprivate func showMain() {
+    fileprivate func showAuth() {
         children.removeAll()
-        let mainTabbar = HomeTabBarCoordinator(navigationController: navigationController)
-        children.append(mainTabbar)
-        mainTabbar.parentCoordinator = self
-        mainTabbar.start()
-        
+        let authCoordinator = AuthCoordinator(navigationController: navigationController)
+        children.append(authCoordinator)
+        authCoordinator.parentCoordinator = self
+        authCoordinator.start()
     }
     
+    fileprivate func showHome() {
+        children.removeAll()
+        let homeTabBar = HomeTabBarCoordinator(navigationController: navigationController)
+        children.append(homeTabBar)
+        homeTabBar.parentCoordinator = self
+        homeTabBar.start()
+    }
 }
+
 
