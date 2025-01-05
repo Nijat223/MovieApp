@@ -2,7 +2,7 @@
 //  AppCoordinator.swift
 //  MoovieeAPP
 //
-//  Created by Javidan on 21.12.24.
+//  Created by Nijat Shikhaliyev on 21.12.24.
 //
 
 import Foundation
@@ -26,10 +26,10 @@ final class AppCoordinator: Coordinator {
     
     fileprivate func showMain() {
         children.removeAll()
-//        let mainTabbar = MainTabBarCoordinator(navigationController: navigationController)
-//        children.append(mainTabbar)
-//        mainTabbar.parentCoordinator = self
-//        mainTabbar.start()
+        let mainTabbar = HomeTabBarCoordinator(navigationController: navigationController)
+        children.append(mainTabbar)
+        mainTabbar.parentCoordinator = self
+        mainTabbar.start()
         
     }
     

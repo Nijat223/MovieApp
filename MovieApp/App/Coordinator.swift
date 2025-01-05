@@ -2,7 +2,7 @@
 //  Coordinator.swift
 //  MoovieeAPP
 //
-//  Created by Javidan on 21.12.24.
+//  Created by Nijat Shikhaliyev on 21.12.24.
 //
 
 import Foundation
