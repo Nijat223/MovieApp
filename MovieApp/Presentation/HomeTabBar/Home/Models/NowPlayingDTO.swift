@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - NowPlayingDTO
 struct NowPlayingDTO: Codable {
-    let dates: Dates
+    let dates: NowPlayingDates
     let page: Int
     let results: [NowPlayingResult]
     let totalPages, totalResults: Int
@@ -22,7 +22,7 @@ struct NowPlayingDTO: Codable {
 }
 
 // MARK: - Dates
-struct Dates: Codable {
+struct NowPlayingDates: Codable {
     let maximum, minimum: String
 }
 
@@ -56,8 +56,3 @@ struct NowPlayingResult: Codable {
     }
 }
 
-enum OriginalLanguage: String, Codable {
-    case en = "en"
-    case es = "es"
-    case nl = "nl"
-}

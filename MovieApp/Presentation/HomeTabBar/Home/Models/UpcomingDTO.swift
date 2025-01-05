@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - UpcomingDTO
 struct UpcomingDTO: Codable {
-    let dates: Dates
+    let dates: UpcomingDates
     let page: Int
     let results: [UpcomingResult]
     let totalPages, totalResults: Int
@@ -23,7 +23,7 @@ struct UpcomingDTO: Codable {
 }
 
 // MARK: - Dates
-struct Dates: Codable {
+struct UpcomingDates: Codable {
     let maximum, minimum: String
 }
 
@@ -55,10 +55,4 @@ struct UpcomingResult: Codable {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
-}
-
-enum OriginalLanguage: String, Codable {
-    case en = "en"
-    case fr = "fr"
-    case lv = "lv"
 }

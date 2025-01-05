@@ -50,9 +50,3 @@ struct PopularResult: Codable {
         case voteCount = "vote_count"
     }
 }
-
-enum OriginalLanguage: String, Codable {
-    case en = "en"
-    case es = "es"
-    case nl = "nl"
-}
