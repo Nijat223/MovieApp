@@ -2,7 +2,7 @@
 //  CoreErrorModel.swift
 //  URLSession
 //
-//  Created by Aslanli Faqan on 27.11.24.
+//  Created by Nijat Shikhaliyev on 27.11.24.
 //
 
 import Foundation
