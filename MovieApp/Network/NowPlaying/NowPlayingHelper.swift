@@ -7,14 +7,14 @@
 
 import Foundation
 enum NowPlayingHelper {
-    case all(String)
+    case NowPlaying
     
     private var mainPath: String {
-        return "now_playing/"
+        return "movie/now_playing"
     }
     var endPoint: URL? {
         switch self {
-            case .all(let query): return CoreAPIHelper.instance.makeURL(path:"\(mainPath)all/\(query)")
+            case .NowPlaying: return CoreAPIHelper.instance.makeURL(path: mainPath)
         }
     }
 }

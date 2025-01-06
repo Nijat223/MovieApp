@@ -21,7 +21,9 @@
             cv.register(cell: MovieCell.self)
             cv.register(cell: TrandingSectionCell.self)
             cv.register(cell: PopularSegmentCell.self)
-
+            cv.register(cell: NowPlayingSegmentCell.self)
+            cv.register(cell: TopRatedSegmentCell.self)
+            cv.register(cell: UpcomingSegmentCell.self)
             cv.register(header: SectionHeader.self)
 
     //        cv.register(SectionHeader.self, forSupplementaryViewOfKind: "header", withReuseIdentifier: "SectionHeader")
@@ -53,9 +55,13 @@
         override func viewDidLoad() {
             super.viewDidLoad()
             configureViewModel()
-            viewModel.getPopularPrint()
             viewModel.type = .day
             viewModel.getPopularList()
+            viewModel.getNowPlayingList()
+            viewModel.getTopRatedList()
+            viewModel.getUpcomingList()
+
+
             // Do any additional setup after loading the view.
         }
         
@@ -103,6 +109,11 @@
                 switch sectionIndex {
                     case 0 : return self.layout.trandingSegmentSection()
                 case 2: return self.layout.segmentSection()
+                case 4: return self.layout.segmentSection()
+                case 6: return self.layout.segmentSection()
+                case 8: return self.layout.segmentSection()
+
+
                     default: return self.layout.trandingSection()
                 }
             }
@@ -124,6 +135,12 @@
                     case 1 : return viewModel.getTrandingCount()
                 case 2: return 1
                 case 3: return  viewModel.getPopularCount()
+                case 4: return 1
+                case 5: return  viewModel.getNowPlayingCount()
+                case 6: return 1
+                case 7: return  viewModel.getTopRatedCount()
+                case 8: return 1
+                case 9: return  viewModel.getUpcomingCount()
                     default: return 2
                 }
             }
@@ -154,6 +171,36 @@
                 case 3:
                     let cell: MovieCell = collectionView.dequeue(for: indexPath)
                     guard let item = viewModel.getPopularMovies(index: indexPath.item) else {
+                        return UICollectionViewCell()
+                    }
+                    cell.configureCell(model: item)
+                    return cell
+                case 4:
+                    let cell: NowPlayingSegmentCell = collectionView.dequeue(for: indexPath)
+                    return cell
+                case 5:
+                    let cell: MovieCell = collectionView.dequeue(for: indexPath)
+                    guard let item = viewModel.getNowPlayingMovies(index: indexPath.item) else {
+                        return UICollectionViewCell()
+                    }
+                    cell.configureCell(model: item)
+                    return cell
+                case 6:
+                    let cell: TopRatedSegmentCell = collectionView.dequeue(for: indexPath)
+                    return cell
+                case 7:
+                    let cell: MovieCell = collectionView.dequeue(for: indexPath)
+                    guard let item = viewModel.getTopRatedMovies(index: indexPath.item) else {
+                        return UICollectionViewCell()
+                    }
+                    cell.configureCell(model: item)
+                    return cell
+                case 8:
+                    let cell: UpcomingSegmentCell = collectionView.dequeue(for: indexPath)
+                    return cell
+                case 9:
+                    let cell: MovieCell = collectionView.dequeue(for: indexPath)
+                    guard let item = viewModel.getUpcomingMovies(index: indexPath.item) else {
                         return UICollectionViewCell()
                     }
                     cell.configureCell(model: item)

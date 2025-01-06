@@ -54,3 +54,23 @@ struct UpcomingResult: Codable {
         case voteCount = "vote_count"
     }
 }
+
+private var imageBasePath = "https://image.tmdb.org/t/p/w500"
+
+
+
+extension UpcomingResult: MovieCellProtocol {
+var titleString: String {
+    title
+}
+
+var subtitleString: String {
+    releaseDate
+}
+
+var iconURL: String {
+     imageBasePath + posterPath
+}
+
+
+}

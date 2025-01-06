@@ -18,6 +18,8 @@ final class HomeTabBarCoordinator : Coordinator {
     private var homeCoordinator: HomeCoordinator?
     private var favouriteCoordinator: FavouriteCoordinator?
     private var searchCoordinator: SearchCoordinator?
+    private var personCoordinator: PersonCoordinator?
+
 
 
     
@@ -70,12 +72,24 @@ final class HomeTabBarCoordinator : Coordinator {
         searchItem.image = UIImage(systemName: "magnifyingglass")
         searchItem.selectedImage = UIImage(systemName: "magnifyingglass")
         searchNavController.tabBarItem = searchItem
+        
+        let personNavController = UINavigationController()
+        personCoordinator = PersonCoordinator(navigationController: personNavController)
+        // we want to home coordinator connected to the App Coordinator, because the HomeTabBar coordinator only serves as a container.
+        personCoordinator?.parentCoordinator = parentCoordinator
+        // Setup for home tab
+        let personItem = UITabBarItem()
+        personItem.title = "Person"
+        personItem.image = UIImage(systemName: "person.badge.shield.checkmark")
+        personItem.selectedImage = UIImage(systemName: "person.badge.shield.checkmark")
+        personNavController.tabBarItem = personItem
        
         
         tabBarController.viewControllers = [
             homeNavigationController,
             favNavController,
-            searchNavController
+            searchNavController,
+            personNavController
         ]
         
         navigationController.pushViewController(tabBarController, animated: true)
@@ -93,8 +107,13 @@ final class HomeTabBarCoordinator : Coordinator {
         parentCoordinator?.children.append(
             searchCoordinator ?? SearchCoordinator(navigationController: UINavigationController())
         )
+        
+        parentCoordinator?.children.append(
+            personCoordinator ?? PersonCoordinator(navigationController: UINavigationController())
+        )
         homeCoordinator?.start()
         favouriteCoordinator?.start()
         searchCoordinator?.start()
+        personCoordinator?.start()
     }
 }

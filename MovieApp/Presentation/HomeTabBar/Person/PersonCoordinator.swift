@@ -1,5 +1,5 @@
 //
-//  SearchCoordinator.swift
+//  PersonCoordinator.swift
 //  MovieApp
 //
 //  Created by Nijat Shikhaliyev on 06.01.25.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit.UINavigationController
 
-final class SearchCoordinator: Coordinator {
+final class PersonCoordinator: Coordinator {
     var parentCoordinator: Coordinator?
     
     var children: [Coordinator] = []
@@ -20,7 +20,7 @@ final class SearchCoordinator: Coordinator {
     }
     
     func start() {
-        let controller = SearchController(viewModel: .init())
+        let controller = PersonController(viewModel: .init())
         showController(vc: controller)
     }
 }

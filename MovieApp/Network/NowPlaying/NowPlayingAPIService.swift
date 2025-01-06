@@ -8,13 +8,12 @@
 import Foundation
 final class NowPlayingAPIService: NowPlayingUseCase {
     private let apiService = CoreAPIManager.instance
-    func getTrendingMovie(
-        timeInterval: String,
+    func getNowPlayingMovie(
         completion: @escaping (NowPlayingDTO?, String?) -> Void?
     ) {
         apiService.request(
             type: NowPlayingDTO.self,
-            url: NowPlayingHelper.all(timeInterval).endPoint,
+            url: NowPlayingHelper.NowPlaying.endPoint,
             method: .GET
         ) { [weak self] result in
                 guard let _ = self else {return}

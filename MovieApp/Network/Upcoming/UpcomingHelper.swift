@@ -7,14 +7,15 @@
 
 import Foundation
 enum UpcomingHelper {
-    case all(String)
+    case Upcoming
     
     private var mainPath: String {
-        return "upcoming/"
+        return "movie/upcoming"
     }
     var endPoint: URL? {
         switch self {
-            case .all(let query): return CoreAPIHelper.instance.makeURL(path:"\(mainPath)all/\(query)")
+        case .Upcoming: return CoreAPIHelper.instance.makeURL(path: mainPath)
         }
     }
+    
 }

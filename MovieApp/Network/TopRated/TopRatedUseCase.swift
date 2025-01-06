@@ -7,5 +7,5 @@
 
 import Foundation
 protocol TopRatedUseCase {
-    func getTrendingMovie(timeInterval: String, completion: @escaping(TopRatedDTO?, String?) -> Void?)
+    func getTopRatedMovie(completion: @escaping(TopRatedDTO?, String?) -> Void?)
 }

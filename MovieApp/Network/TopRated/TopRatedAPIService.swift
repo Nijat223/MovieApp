@@ -8,13 +8,12 @@
 import Foundation
 final class TopRatedAPIService: TopRatedUseCase {
     private let apiService = CoreAPIManager.instance
-    func getTrendingMovie(
-        timeInterval: String,
+    func getTopRatedMovie(
         completion: @escaping (TopRatedDTO?, String?) -> Void?
     ) {
         apiService.request(
             type: TopRatedDTO.self,
-            url: TopRatedHelper.all(timeInterval).endPoint,
+            url: TopRatedHelper.TopRated.endPoint,
             method: .GET
         ) { [weak self] result in
                 guard let _ = self else {return}

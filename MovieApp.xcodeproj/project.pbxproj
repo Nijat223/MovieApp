@@ -66,6 +66,12 @@
 		CAD983432D2C143A0071FEBF /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983422D2C143A0071FEBF /* SearchViewModel.swift */; };
 		CAD983452D2C28480071FEBF /* PopularSegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983442D2C28480071FEBF /* PopularSegmentCell.swift */; };
 		CAD983472D2C2C620071FEBF /* colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAD983462D2C2C620071FEBF /* colors.xcassets */; };
+		CAD9834A2D2C319A0071FEBF /* PersonCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983492D2C319A0071FEBF /* PersonCoordinator.swift */; };
+		CAD9834D2D2C31DF0071FEBF /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9834C2D2C31DF0071FEBF /* PersonController.swift */; };
+		CAD9834F2D2C32160071FEBF /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9834E2D2C32160071FEBF /* PersonViewModel.swift */; };
+		CAD983512D2C41640071FEBF /* NowPlayingSegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983502D2C41640071FEBF /* NowPlayingSegmentCell.swift */; };
+		CAD983532D2C50990071FEBF /* UpcomingSegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983522D2C50990071FEBF /* UpcomingSegmentCell.swift */; };
+		CAD983552D2C51350071FEBF /* TopRatedSegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983542D2C51350071FEBF /* TopRatedSegmentCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +150,12 @@
 		CAD983422D2C143A0071FEBF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		CAD983442D2C28480071FEBF /* PopularSegmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSegmentCell.swift; sourceTree = "<group>"; };
 		CAD983462D2C2C620071FEBF /* colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = colors.xcassets; sourceTree = "<group>"; };
+		CAD983492D2C319A0071FEBF /* PersonCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCoordinator.swift; sourceTree = "<group>"; };
+		CAD9834C2D2C31DF0071FEBF /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
+		CAD9834E2D2C32160071FEBF /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
+		CAD983502D2C41640071FEBF /* NowPlayingSegmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingSegmentCell.swift; sourceTree = "<group>"; };
+		CAD983522D2C50990071FEBF /* UpcomingSegmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingSegmentCell.swift; sourceTree = "<group>"; };
+		CAD983542D2C51350071FEBF /* TopRatedSegmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedSegmentCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +326,7 @@
 				CAD982D72D1E60970071FEBF /* TabBarController.swift */,
 				CAD982D42D1E5CCA0071FEBF /* HomeTabBarCoordinator.swift */,
 				CAD982D92D1E659D0071FEBF /* Home */,
+				CAD983482D2C31700071FEBF /* Person */,
 				CAD9833C2D2C13BF0071FEBF /* Search */,
 				CAD982DF2D1FB1800071FEBF /* Favourite */,
 			);
@@ -404,6 +417,9 @@
 				CAD982F22D27E1A30071FEBF /* MovieCell.swift */,
 				CAD982FD2D2840570071FEBF /* TrandingSectionCell.swift */,
 				CAD983442D2C28480071FEBF /* PopularSegmentCell.swift */,
+				CAD983502D2C41640071FEBF /* NowPlayingSegmentCell.swift */,
+				CAD983542D2C51350071FEBF /* TopRatedSegmentCell.swift */,
+				CAD983522D2C50990071FEBF /* UpcomingSegmentCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -508,6 +524,24 @@
 			children = (
 				CAD983402D2C140F0071FEBF /* SearchController.swift */,
 				CAD983422D2C143A0071FEBF /* SearchViewModel.swift */,
+			);
+			path = ViewModules;
+			sourceTree = "<group>";
+		};
+		CAD983482D2C31700071FEBF /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				CAD983492D2C319A0071FEBF /* PersonCoordinator.swift */,
+				CAD9834B2D2C31C40071FEBF /* ViewModules */,
+			);
+			path = Person;
+			sourceTree = "<group>";
+		};
+		CAD9834B2D2C31C40071FEBF /* ViewModules */ = {
+			isa = PBXGroup;
+			children = (
+				CAD9834C2D2C31DF0071FEBF /* PersonController.swift */,
+				CAD9834E2D2C32160071FEBF /* PersonViewModel.swift */,
 			);
 			path = ViewModules;
 			sourceTree = "<group>";
@@ -664,6 +698,8 @@
 				CAD982D82D1E60970071FEBF /* TabBarController.swift in Sources */,
 				CAD983272D2B162C0071FEBF /* NowPlayingUseCase.swift in Sources */,
 				CAD983392D2B17260071FEBF /* UpcomingUseCase.swift in Sources */,
+				CAD983532D2C50990071FEBF /* UpcomingSegmentCell.swift in Sources */,
+				CAD983552D2C51350071FEBF /* TopRatedSegmentCell.swift in Sources */,
 				CAD9831D2D2B14460071FEBF /* TopRatedDTO.swift in Sources */,
 				CAD9832D2D2B16A10071FEBF /* PopularUseCase.swift in Sources */,
 				CAD982E32D1FB2080071FEBF /* FavouriteViewModel.swift in Sources */,
@@ -671,6 +707,7 @@
 				CAD982CB2D1B121A0071FEBF /* CoreAPIHelper.swift in Sources */,
 				CAD9828C2D1B0D1E0071FEBF /* HomeController.swift in Sources */,
 				CAD982D52D1E5CCA0071FEBF /* HomeTabBarCoordinator.swift in Sources */,
+				CAD9834D2D2C31DF0071FEBF /* PersonController.swift in Sources */,
 				CAD982F62D27F0140071FEBF /* HomeLayouts.swift in Sources */,
 				CAD982ED2D229E0E0071FEBF /* TrendingHelper.swift in Sources */,
 				CAD983172D2AB2D60071FEBF /* LoginViewModel.swift in Sources */,
@@ -679,14 +716,17 @@
 				CAD982EB2D229DF90071FEBF /* TrendingUseCase.swift in Sources */,
 				CAD982882D1B0D1E0071FEBF /* AppDelegate.swift in Sources */,
 				CAD9832B2D2B16880071FEBF /* PopularHelper.swift in Sources */,
+				CAD983512D2C41640071FEBF /* NowPlayingSegmentCell.swift in Sources */,
 				CAD983332D2B16E60071FEBF /* TopRatedUseCase.swift in Sources */,
 				CAD983152D2AB2C20071FEBF /* LoginController.swift in Sources */,
 				CAD983002D2844830071FEBF /* SectionHeader.swift in Sources */,
 				CAD983192D2B11AC0071FEBF /* NowPlayingDTO.swift in Sources */,
 				CAD982C22D1B0FA10071FEBF /* LayoutExtension.swift in Sources */,
 				CAD982D22D1B165C0071FEBF /* SceneDelegate.swift in Sources */,
+				CAD9834A2D2C319A0071FEBF /* PersonCoordinator.swift in Sources */,
 				CAD982CC2D1B121A0071FEBF /* CoreAPIManager.swift in Sources */,
 				CAD9830F2D2AB1140071FEBF /* AuthCoordinator.swift in Sources */,
+				CAD9834F2D2C32160071FEBF /* PersonViewModel.swift in Sources */,
 				CAD982F02D268EEE0071FEBF /* MovieDTO.swift in Sources */,
 				CAD9831B2D2B133A0071FEBF /* PopularDTO.swift in Sources */,
 				CAD9833E2D2C13E10071FEBF /* SearchCoordinator.swift in Sources */,

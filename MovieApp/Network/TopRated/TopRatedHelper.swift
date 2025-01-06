@@ -7,14 +7,14 @@
 
 import Foundation
 enum TopRatedHelper {
-    case all(String)
+    case TopRated
     
     private var mainPath: String {
-        return "top_rated/"
+        return "movie/top_rated"
     }
     var endPoint: URL? {
         switch self {
-            case .all(let query): return CoreAPIHelper.instance.makeURL(path:"\(mainPath)all/\(query)")
+            case .TopRated: return CoreAPIHelper.instance.makeURL(path: mainPath)
         }
     }
 }

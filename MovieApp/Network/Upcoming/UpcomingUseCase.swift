@@ -7,5 +7,5 @@
 
 import Foundation
 protocol UpcomingUseCase {
-    func getTrendingMovie(timeInterval: String, completion: @escaping(UpcomingDTO?, String?) -> Void?)
+    func getUpcomingMovie(completion: @escaping(UpcomingDTO?, String?) -> Void?)
 }

@@ -8,13 +8,12 @@
 import Foundation
 final class UpcomingAPIService: UpcomingUseCase {
     private let apiService = CoreAPIManager.instance
-    func getTrendingMovie(
-        timeInterval: String,
+    func getUpcomingMovie(
         completion: @escaping (UpcomingDTO?, String?) -> Void?
     ) {
         apiService.request(
             type: UpcomingDTO.self,
-            url: UpcomingHelper.all(timeInterval).endPoint,
+            url: UpcomingHelper.Upcoming.endPoint,
             method: .GET
         ) { [weak self] result in
                 guard let _ = self else {return}

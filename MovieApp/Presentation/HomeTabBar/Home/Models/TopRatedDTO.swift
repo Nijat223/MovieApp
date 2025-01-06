@@ -49,3 +49,23 @@ struct TopRatedResult: Codable {
         case voteCount = "vote_count"
     }
 }
+
+private var imageBasePath = "https://image.tmdb.org/t/p/w500"
+
+
+
+extension TopRatedResult: MovieCellProtocol {
+var titleString: String {
+    title
+}
+
+var subtitleString: String {
+    releaseDate
+}
+
+var iconURL: String {
+     imageBasePath + posterPath
+}
+
+
+}

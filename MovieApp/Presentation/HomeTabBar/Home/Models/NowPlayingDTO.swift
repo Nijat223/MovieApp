@@ -30,12 +30,13 @@ struct NowPlayingDates: Codable {
     let maximum, minimum: String
 }
 
-// MARK: - NowPlayingResult
+// MARK: - Result
 struct NowPlayingResult: Codable {
     let adult: Bool
     let backdropPath: String?
     let genreIDS: [Int]
     let id: Int
+    let originalLanguage: String
     let originalTitle, overview: String
     let popularity: Double
     let posterPath, releaseDate, title: String
@@ -48,6 +49,7 @@ struct NowPlayingResult: Codable {
         case backdropPath = "backdrop_path"
         case genreIDS = "genre_ids"
         case id
+        case originalLanguage = "original_language"
         case originalTitle = "original_title"
         case overview, popularity
         case posterPath = "poster_path"
@@ -59,3 +61,23 @@ struct NowPlayingResult: Codable {
 }
 
 
+
+    private var imageBasePath = "https://image.tmdb.org/t/p/w500"
+
+
+
+extension NowPlayingResult: MovieCellProtocol {
+    var titleString: String {
+        title
+    }
+    
+    var subtitleString: String {
+        releaseDate
+    }
+    
+    var iconURL: String {
+         imageBasePath + posterPath
+    }
+    
+    
+}
