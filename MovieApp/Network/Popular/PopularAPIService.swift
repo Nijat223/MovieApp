@@ -8,13 +8,12 @@
 import Foundation
 final class PopularAPIService: PopularUseCase {
     private let apiService = CoreAPIManager.instance
-    func getTrendingMovie(
-        timeInterval: String,
+    func getPopularMovie(
         completion: @escaping (PopularDTO?, String?) -> Void?
     ) {
         apiService.request(
             type: PopularDTO.self,
-            url: PopularHelper.all(timeInterval).endPoint,
+            url: PopularHelper.popular.endPoint,
             method: .GET
         ) { [weak self] result in
                 guard let _ = self else {return}

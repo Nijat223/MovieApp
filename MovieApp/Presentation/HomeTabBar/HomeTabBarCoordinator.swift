@@ -17,6 +17,9 @@ final class HomeTabBarCoordinator : Coordinator {
     
     private var homeCoordinator: HomeCoordinator?
     private var favouriteCoordinator: FavouriteCoordinator?
+    private var searchCoordinator: SearchCoordinator?
+
+
     
     init(
         navigationController : UINavigationController
@@ -56,9 +59,23 @@ final class HomeTabBarCoordinator : Coordinator {
         favItem.selectedImage = UIImage(systemName: "heart.fill")
         favNavController.tabBarItem = favItem
         
+        
+        let searchNavController = UINavigationController()
+        searchCoordinator = SearchCoordinator(navigationController: searchNavController)
+        // we want to home coordinator connected to the App Coordinator, because the HomeTabBar coordinator only serves as a container.
+        searchCoordinator?.parentCoordinator = parentCoordinator
+        // Setup for home tab
+        let searchItem = UITabBarItem()
+        searchItem.title = "Search"
+        searchItem.image = UIImage(systemName: "magnifyingglass")
+        searchItem.selectedImage = UIImage(systemName: "magnifyingglass")
+        searchNavController.tabBarItem = searchItem
+       
+        
         tabBarController.viewControllers = [
             homeNavigationController,
-            favNavController
+            favNavController,
+            searchNavController
         ]
         
         navigationController.pushViewController(tabBarController, animated: true)
@@ -73,7 +90,11 @@ final class HomeTabBarCoordinator : Coordinator {
             favouriteCoordinator ?? FavouriteCoordinator(navigationController: UINavigationController())
         )
         
+        parentCoordinator?.children.append(
+            searchCoordinator ?? SearchCoordinator(navigationController: UINavigationController())
+        )
         homeCoordinator?.start()
         favouriteCoordinator?.start()
+        searchCoordinator?.start()
     }
 }

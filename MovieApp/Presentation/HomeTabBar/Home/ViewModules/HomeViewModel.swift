@@ -10,7 +10,7 @@ final class HomeViewModel {
     enum ViewState {
         case loading
         case loaded
-        case successTranding
+        case success
         case error(String)
     }
     
@@ -19,16 +19,21 @@ final class HomeViewModel {
     }
     
     private var trendingUse: TrendingUseCase
+    private var popularUse: PopularUseCase
+
     var type: TimeInterval = .day {
         didSet {
             getMovieList()
         }
     }
     private (set) var movieDto: MovieDTO?
+    private (set) var popularDTO: PopularDTO?
+
     
     var requestCallBack: ((ViewState) -> Void)?
     init() {
         trendingUse = TrendingAPIService()
+        popularUse = PopularAPIService()
     }
     
     //MARK: Tranding
@@ -41,6 +46,8 @@ final class HomeViewModel {
         return movieDto?.results?[index]
     }
     
+
+    
     private func getMovieList() {
         requestCallBack?(.loading)
         trendingUse.getTrendingMovie(
@@ -49,7 +56,34 @@ final class HomeViewModel {
                 requestCallBack?(.loaded)
                 if let dto = dto {
                     movieDto = dto
-                    requestCallBack?(.successTranding)
+                    requestCallBack?(.success)
+                } else if let error = error {
+                    requestCallBack?(.error(error))
+                }
+            }
+    }
+    
+    //MARK: Popular
+    
+    func getPopularCount() -> Int {
+        popularDTO?.results.count ?? 0
+    }
+    
+    func getPopularPrint(){
+        print(#function, popularDTO?.results.count ?? 22)
+    }
+    func getPopularMovies(index: Int) -> PopularResult? {
+        return popularDTO?.results[index]    }
+    
+    
+    func getPopularList() {
+        requestCallBack?(.loading)
+        popularUse.getPopularMovie() { [weak self] dto, error in
+                guard let self = self else {return}
+                requestCallBack?(.loaded)
+                if let dto = dto {
+                    popularDTO = dto
+                    requestCallBack?(.success)
                 } else if let error = error {
                     requestCallBack?(.error(error))
                 }

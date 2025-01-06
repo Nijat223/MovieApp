@@ -61,6 +61,11 @@
 		CAD983372D2B17160071FEBF /* UpcomingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983362D2B17160071FEBF /* UpcomingHelper.swift */; };
 		CAD983392D2B17260071FEBF /* UpcomingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983382D2B17260071FEBF /* UpcomingUseCase.swift */; };
 		CAD9833B2D2B17390071FEBF /* UpcomingAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9833A2D2B17390071FEBF /* UpcomingAPIService.swift */; };
+		CAD9833E2D2C13E10071FEBF /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9833D2D2C13E10071FEBF /* SearchCoordinator.swift */; };
+		CAD983412D2C140F0071FEBF /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983402D2C140F0071FEBF /* SearchController.swift */; };
+		CAD983432D2C143A0071FEBF /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983422D2C143A0071FEBF /* SearchViewModel.swift */; };
+		CAD983452D2C28480071FEBF /* PopularSegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983442D2C28480071FEBF /* PopularSegmentCell.swift */; };
+		CAD983472D2C2C620071FEBF /* colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAD983462D2C2C620071FEBF /* colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +139,11 @@
 		CAD983362D2B17160071FEBF /* UpcomingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingHelper.swift; sourceTree = "<group>"; };
 		CAD983382D2B17260071FEBF /* UpcomingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingUseCase.swift; sourceTree = "<group>"; };
 		CAD9833A2D2B17390071FEBF /* UpcomingAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingAPIService.swift; sourceTree = "<group>"; };
+		CAD9833D2D2C13E10071FEBF /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
+		CAD983402D2C140F0071FEBF /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		CAD983422D2C143A0071FEBF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		CAD983442D2C28480071FEBF /* PopularSegmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSegmentCell.swift; sourceTree = "<group>"; };
+		CAD983462D2C2C620071FEBF /* colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				CAD982902D1B0D220071FEBF /* Assets.xcassets */,
+				CAD983462D2C2C620071FEBF /* colors.xcassets */,
 				CAD982922D1B0D220071FEBF /* LaunchScreen.storyboard */,
 			);
 			path = Resource;
@@ -303,6 +314,7 @@
 				CAD982D72D1E60970071FEBF /* TabBarController.swift */,
 				CAD982D42D1E5CCA0071FEBF /* HomeTabBarCoordinator.swift */,
 				CAD982D92D1E659D0071FEBF /* Home */,
+				CAD9833C2D2C13BF0071FEBF /* Search */,
 				CAD982DF2D1FB1800071FEBF /* Favourite */,
 			);
 			path = HomeTabBar;
@@ -391,6 +403,7 @@
 			children = (
 				CAD982F22D27E1A30071FEBF /* MovieCell.swift */,
 				CAD982FD2D2840570071FEBF /* TrandingSectionCell.swift */,
+				CAD983442D2C28480071FEBF /* PopularSegmentCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -479,6 +492,24 @@
 				CAD9833A2D2B17390071FEBF /* UpcomingAPIService.swift */,
 			);
 			path = Upcoming;
+			sourceTree = "<group>";
+		};
+		CAD9833C2D2C13BF0071FEBF /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CAD9833D2D2C13E10071FEBF /* SearchCoordinator.swift */,
+				CAD9833F2D2C14000071FEBF /* ViewModules */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		CAD9833F2D2C14000071FEBF /* ViewModules */ = {
+			isa = PBXGroup;
+			children = (
+				CAD983402D2C140F0071FEBF /* SearchController.swift */,
+				CAD983422D2C143A0071FEBF /* SearchViewModel.swift */,
+			);
+			path = ViewModules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -597,6 +628,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAD982912D1B0D220071FEBF /* Assets.xcassets in Resources */,
+				CAD983472D2C2C620071FEBF /* colors.xcassets in Resources */,
 				CAD982942D1B0D220071FEBF /* Base in Resources */,
 				CAD983022D2960B20071FEBF /* GoogleService-Info.plist in Resources */,
 			);
@@ -628,6 +660,7 @@
 				CAD983292D2B16450071FEBF /* NowPlayingAPIService.swift in Sources */,
 				CAD9831F2D2B14AD0071FEBF /* UpcomingDTO.swift in Sources */,
 				CAD9833B2D2B17390071FEBF /* UpcomingAPIService.swift in Sources */,
+				CAD983452D2C28480071FEBF /* PopularSegmentCell.swift in Sources */,
 				CAD982D82D1E60970071FEBF /* TabBarController.swift in Sources */,
 				CAD983272D2B162C0071FEBF /* NowPlayingUseCase.swift in Sources */,
 				CAD983392D2B17260071FEBF /* UpcomingUseCase.swift in Sources */,
@@ -656,8 +689,10 @@
 				CAD9830F2D2AB1140071FEBF /* AuthCoordinator.swift in Sources */,
 				CAD982F02D268EEE0071FEBF /* MovieDTO.swift in Sources */,
 				CAD9831B2D2B133A0071FEBF /* PopularDTO.swift in Sources */,
+				CAD9833E2D2C13E10071FEBF /* SearchCoordinator.swift in Sources */,
 				CAD982C02D1B0F720071FEBF /* Extensions.swift in Sources */,
 				CAD982F32D27E1A30071FEBF /* MovieCell.swift in Sources */,
+				CAD983432D2C143A0071FEBF /* SearchViewModel.swift in Sources */,
 				CAD982C42D1B10330071FEBF /* BaseViewController.swift in Sources */,
 				CAD982E92D229DE60071FEBF /* TrendingAPIService.swift in Sources */,
 				CAD9832F2D2B16B50071FEBF /* PopularAPIService.swift in Sources */,
@@ -665,6 +700,7 @@
 				CAD982E52D1FB2290071FEBF /* FavouriteController.swift in Sources */,
 				CAD982E12D1FB1E40071FEBF /* FavouriteCoordinator.swift in Sources */,
 				CAD983112D2AB1440071FEBF /* AuthNavigation.swift in Sources */,
+				CAD983412D2C140F0071FEBF /* SearchController.swift in Sources */,
 				CAD982D12D1B165C0071FEBF /* Coordinator.swift in Sources */,
 				CAD983252D2B16170071FEBF /* NowPlayingHelper.swift in Sources */,
 				CAD983352D2B16F80071FEBF /* TopRatedAPIService.swift in Sources */,

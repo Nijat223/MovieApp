@@ -45,7 +45,6 @@ struct UpcomingResult: Codable {
         case backdropPath = "backdrop_path"
         case genreIDS = "genre_ids"
         case id
-        case originalLanguage = "original_language"
         case originalTitle = "original_title"
         case overview, popularity
         case posterPath = "poster_path"

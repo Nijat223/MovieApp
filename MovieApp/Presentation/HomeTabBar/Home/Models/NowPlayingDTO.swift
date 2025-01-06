@@ -4,6 +4,10 @@
 //
 //  Created by Nijat Shikhaliyev on 05.01.25.
 //
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
+//
+//   let nowPlayingDTO = try? JSONDecoder().decode(NowPlayingDTO.self, from: jsonData)
 
 import Foundation
 
@@ -44,7 +48,6 @@ struct NowPlayingResult: Codable {
         case backdropPath = "backdrop_path"
         case genreIDS = "genre_ids"
         case id
-        case originalLanguage = "original_language"
         case originalTitle = "original_title"
         case overview, popularity
         case posterPath = "poster_path"
@@ -54,4 +57,5 @@ struct NowPlayingResult: Codable {
         case voteCount = "vote_count"
     }
 }
+
 

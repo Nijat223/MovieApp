@@ -11,7 +11,7 @@ final class SectionHeader: UICollectionReusableView {
     
     private lazy var divider: UIView = {
         let d = UIView()
-        d.backgroundColor = .red
+        d.backgroundColor = .clear
         return d
     }()
     

@@ -7,5 +7,5 @@
 
 import Foundation
 protocol PopularUseCase {
-    func getTrendingMovie(timeInterval: String, completion: @escaping(PopularDTO?, String?) -> Void?)
+    func getPopularMovie(completion: @escaping(PopularDTO?, String?) -> Void?)
 }

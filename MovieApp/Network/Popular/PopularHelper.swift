@@ -7,14 +7,14 @@
 
 import Foundation
 enum PopularHelper {
-    case all(String)
+    case popular
     
     private var mainPath: String {
-        return "popular/"
+        return "movie/popular"
     }
     var endPoint: URL? {
         switch self {
-            case .all(let query): return CoreAPIHelper.instance.makeURL(path:"\(mainPath)all/\(query)")
+            case .popular: return CoreAPIHelper.instance.makeURL(path: mainPath)
         }
     }
 }
