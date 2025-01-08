@@ -7,10 +7,22 @@
 
 import UIKit
 final class RegisterController: BaseViewController {
-    private let viewModel: LoginViewModel
+    private let viewModel: RegisterViewModel
+    
+    private lazy var imageView: UIImageView = {
+        let image = UIImageView ()
+        image.image = UIImage(named: "register 1")
+        image.layer.zPosition = -1
+        return image
+        
+    } ()
     
     private lazy var emailField = UITextField().withUsing {
         $0.placeholder = "Email"
+        $0.backgroundColor = .white
+        $0.setLeftPadding(10)
+        $0.layer.cornerRadius = 10
+        $0.delegate = self
         $0.layer.borderColor = UIColor.black.cgColor
         $0.layer.borderWidth = 1
         $0.anchorSize(.init(width: 0, height: 48))
@@ -18,6 +30,10 @@ final class RegisterController: BaseViewController {
     
     private lazy var passField = UITextField().withUsing {
         $0.placeholder = "Password"
+        $0.backgroundColor = .white
+        $0.setLeftPadding(10)
+        $0.layer.cornerRadius = 10
+        $0.delegate = self
         $0.layer.borderColor = UIColor.black.cgColor
         $0.layer.borderWidth = 1
         $0.anchorSize(.init(width: 0, height: 48))
@@ -35,22 +51,24 @@ final class RegisterController: BaseViewController {
     
     private lazy var loginButton = UIButton().withUsing {
         $0.setTitle("Login", for: .normal)
+        $0.layer.cornerRadius = 10
         $0.anchorSize(.init(width: 0, height: 48))
         $0.titleLabel?.textColor = .white
-        $0.backgroundColor = .blue
+        $0.backgroundColor = .systemBlue
     }
     
     private lazy var registerButton = UIButton().withUsing {
         $0.setTitle("Register", for: .normal)
+        $0.layer.cornerRadius = 10
         $0.anchorSize(.init(width: 0, height: 48))
         $0.titleLabel?.textColor = .white
-        $0.backgroundColor = .clear
+        $0.backgroundColor = .systemBlue
         $0.layer.borderColor = UIColor.black.cgColor
         $0.layer.borderWidth = 1
     }
     
     private lazy var ButtonStackView: UIStackView = {
-        let s = UIStackView(arrangedSubviews: [loginButton, registerButton])
+        let s = UIStackView(arrangedSubviews: [registerButton, loginButton])
         s.alignment = .fill
         s.distribution = .fill
         s.axis = .vertical
@@ -58,7 +76,7 @@ final class RegisterController: BaseViewController {
         return s
     }()
     
-    init(viewModel: LoginViewModel) {
+    init(viewModel: RegisterViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil )
     }
@@ -68,12 +86,15 @@ final class RegisterController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureView()
+        configureTargets()
+        configureConstraint()
         configureViewModel()
     }
     
     override func configureView() {
         super.configureView()
-        view.addSubViews(stackView, ButtonStackView)
+        view.addSubViews(stackView, ButtonStackView, imageView)
     }
     
     override func configureConstraint() {
@@ -82,8 +103,8 @@ final class RegisterController: BaseViewController {
             top: view.safeAreaLayoutGuide.topAnchor,
             leading: view.leadingAnchor,
             trailing: view.trailingAnchor,
-            padding: .init(all: 24)
-        )
+            padding: .init(top: 280, leading: 24 , trailing: -24))
+        
         
         ButtonStackView.anchor(
             leading: view.leadingAnchor,
@@ -91,6 +112,7 @@ final class RegisterController: BaseViewController {
             trailing: view.trailingAnchor,
             padding: .init(all: 24)
         )
+        imageView.fillSuperview()
     }
     
     override func configureTargets() {
@@ -133,12 +155,23 @@ extension RegisterController: UITextFieldDelegate {
         guard let text = textField.text else {return}
         switch textField {
         case emailField:
-            print("Email:", text)
+            if text.isValidEmail(){
+                emailField.layer.borderColor = UIColor.green.cgColor
+
+            } else {
+                emailField.layer.borderColor = UIColor.red.cgColor
+                
+            }
         case passField:
+            if text.isValidPassword(){
+                passField.layer.borderColor = UIColor.green.cgColor
+
+            } else {
+                passField.layer.borderColor = UIColor.red.cgColor
+                
+            }
             print("pass:", text)
         default: return
         }
-        //TODO: Func chixart ve validationlari tetbiq et
-        
     }
 }

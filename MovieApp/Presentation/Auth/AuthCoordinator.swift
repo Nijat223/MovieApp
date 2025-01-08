@@ -29,7 +29,8 @@ final class AuthCoordinator: Coordinator {
 
 extension AuthCoordinator: AuthNavigation {
     func showRegister() {
-        print(#function)
+        let vc = RegisterController(viewModel: .init(navigation: self))
+        showController(vc: vc)
     }
     func showHome() {
         let coor = parentCoordinator as! AppCoordinator

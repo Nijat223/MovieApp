@@ -87,9 +87,9 @@ final class LoginController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        configureTargets()
         configureConstraint()
         configureViewModel()
-        configureTargets()
        
         
     }
@@ -121,6 +121,7 @@ final class LoginController: BaseViewController {
         super.configureTargets()
         loginButton.addTarget(self, action: #selector(loginButtonClicked), for: .touchUpInside)
         registerButton.addTarget(self, action: #selector(registerButtonClicked), for: .touchUpInside)
+
     }
     
     private func configureViewModel() {
@@ -145,8 +146,8 @@ final class LoginController: BaseViewController {
         viewModel.loginRequest(email: email, password: pass)
     }
     
-    @objc
-    private func registerButtonClicked() {
+    @objc private func registerButtonClicked() {
+//        print(#function)
         viewModel.showRegister()
 //        guard let email = emailField.text,
 //              let pass = passField.text else {return}
