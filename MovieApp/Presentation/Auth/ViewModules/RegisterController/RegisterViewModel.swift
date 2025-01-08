@@ -1,15 +1,15 @@
 //
-//  LoginViewModel.swift
+//  RegisterViewModel.swift
 //  MovieApp
 //
-//  Created by Nijat Shikhaliyev on 05.01.25.
+//  Created by Nijat Shikhaliyev on 06.01.25.
 //
 
 import Foundation
 import FirebaseFirestore
 import FirebaseAuth
 
-final class LoginViewModel {
+final class RegisterViewModel {
     enum ViewState {
         case loading
         case loaded
@@ -30,7 +30,7 @@ final class LoginViewModel {
         password: String
     ) {
         requestCallBack?(.loading)
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
             guard let self = self else { return }
             self.requestCallBack?(.loaded)
             if let error = error {
@@ -42,8 +42,6 @@ final class LoginViewModel {
         }
         
     }
-    
-    
     func registerRequest(
         email: String,
         password: String

@@ -8,10 +8,10 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .apppink
+//        view.backgroundColor = "Flux_Dev_Design_a_mesmerizing_application_background_wallpaper_3"
         configureView()
         configureConstraint()
         configureTargets()

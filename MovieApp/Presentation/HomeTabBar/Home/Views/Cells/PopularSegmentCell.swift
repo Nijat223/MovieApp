@@ -9,14 +9,14 @@ import UIKit
 final class PopularSegmentCell: UICollectionViewCell {
  
     private lazy var lineView = UIView().withUsing {
-        $0.backgroundColor = .black
-        $0.layer.borderColor = UIColor.black.cgColor
+        $0.backgroundColor = .blue
+        $0.layer.borderColor = UIColor.blue.cgColor
         $0.layer.masksToBounds = true
     }
     
     private lazy var titleLabel = UILabel().withUsing {
         $0.text = "Popular"
-        $0.textColor = .black 
+        $0.textColor = .blue
         $0.textAlignment = .left
         $0.font = UIFont.systemFont(ofSize: 26, weight: .bold)
     }

@@ -10,6 +10,14 @@
     final class HomeController: BaseViewController {
         private let viewModel: HomeViewModel
         
+        private lazy var imageView: UIImageView = {
+            let image = UIImageView ()
+            image.image = UIImage(named: "image")
+            image.layer.zPosition = -1
+            return image
+            
+        } ()
+        
         private (set) lazy var collectionView: UICollectionView = {
             let l = UICollectionViewFlowLayout()
             l.minimumLineSpacing = 12
@@ -66,11 +74,12 @@
         }
         
         override func configureView() {
-            view.addSubViews(loadingView,collectionView)
+            view.addSubViews(loadingView,collectionView, imageView)
             configureCompositionalLayout()
         }
         
         override func configureConstraint() {
+            imageView.fillSuperview()
             collectionView.fillSuperview()
             loadingView.fillSuperview()
         }

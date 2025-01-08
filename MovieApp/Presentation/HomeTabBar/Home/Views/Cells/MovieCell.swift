@@ -22,13 +22,13 @@ final class MovieCell: UICollectionViewCell {
     
     private lazy var titleLabel = UILabel().withUsing {
         $0.text = "Better Call Saul"
-        $0.textColor = .label
+        $0.textColor = .blue
         $0.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
     }
     
     private lazy var subtitleLabel = UILabel().withUsing {
         $0.text = "Feb 08, 2015"
-        $0.textColor = .secondaryLabel
+        $0.textColor = .blue
         $0.font = UIFont.systemFont(ofSize: 12, weight: .medium)
     }
     

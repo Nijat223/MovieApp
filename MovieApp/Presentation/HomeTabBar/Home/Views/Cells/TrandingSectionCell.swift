@@ -14,7 +14,7 @@ final class TrandingSectionCell: UICollectionViewCell {
     
     private lazy var titleLabel = UILabel().withUsing {
         $0.text = "Tranding"
-        $0.textColor  = .label
+        $0.textColor  = .blue
         $0.font = UIFont.systemFont(ofSize: 26, weight: .bold)
     }
     

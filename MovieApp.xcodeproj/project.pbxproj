@@ -72,6 +72,8 @@
 		CAD983512D2C41640071FEBF /* NowPlayingSegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983502D2C41640071FEBF /* NowPlayingSegmentCell.swift */; };
 		CAD983532D2C50990071FEBF /* UpcomingSegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983522D2C50990071FEBF /* UpcomingSegmentCell.swift */; };
 		CAD983552D2C51350071FEBF /* TopRatedSegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983542D2C51350071FEBF /* TopRatedSegmentCell.swift */; };
+		CAD983572D2C59330071FEBF /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983562D2C59330071FEBF /* RegisterController.swift */; };
+		CAD983592D2C596B0071FEBF /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983582D2C596B0071FEBF /* RegisterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +158,8 @@
 		CAD983502D2C41640071FEBF /* NowPlayingSegmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingSegmentCell.swift; sourceTree = "<group>"; };
 		CAD983522D2C50990071FEBF /* UpcomingSegmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingSegmentCell.swift; sourceTree = "<group>"; };
 		CAD983542D2C51350071FEBF /* TopRatedSegmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedSegmentCell.swift; sourceTree = "<group>"; };
+		CAD983562D2C59330071FEBF /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		CAD983582D2C596B0071FEBF /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -466,6 +470,8 @@
 		CAD983132D2AB25D0071FEBF /* RegisterController */ = {
 			isa = PBXGroup;
 			children = (
+				CAD983562D2C59330071FEBF /* RegisterController.swift */,
+				CAD983582D2C596B0071FEBF /* RegisterViewModel.swift */,
 			);
 			path = RegisterController;
 			sourceTree = "<group>";
@@ -718,6 +724,7 @@
 				CAD9832B2D2B16880071FEBF /* PopularHelper.swift in Sources */,
 				CAD983512D2C41640071FEBF /* NowPlayingSegmentCell.swift in Sources */,
 				CAD983332D2B16E60071FEBF /* TopRatedUseCase.swift in Sources */,
+				CAD983572D2C59330071FEBF /* RegisterController.swift in Sources */,
 				CAD983152D2AB2C20071FEBF /* LoginController.swift in Sources */,
 				CAD983002D2844830071FEBF /* SectionHeader.swift in Sources */,
 				CAD983192D2B11AC0071FEBF /* NowPlayingDTO.swift in Sources */,
@@ -743,6 +750,7 @@
 				CAD983412D2C140F0071FEBF /* SearchController.swift in Sources */,
 				CAD982D12D1B165C0071FEBF /* Coordinator.swift in Sources */,
 				CAD983252D2B16170071FEBF /* NowPlayingHelper.swift in Sources */,
+				CAD983592D2C596B0071FEBF /* RegisterViewModel.swift in Sources */,
 				CAD983352D2B16F80071FEBF /* TopRatedAPIService.swift in Sources */,
 				CAD982FE2D2840570071FEBF /* TrandingSectionCell.swift in Sources */,
 			);

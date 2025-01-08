@@ -1,28 +1,16 @@
 //
-//  LoginController.swift
+//  RegisterController.swift
 //  MovieApp
 //
-//  Created by Nijat Shikhaliyev on 05.01.25.
+//  Created by Nijat Shikhaliyev on 06.01.25.
 //
 
 import UIKit
-final class LoginController: BaseViewController {
+final class RegisterController: BaseViewController {
     private let viewModel: LoginViewModel
-    
-    private lazy var imageView: UIImageView = {
-        let image = UIImageView ()
-        image.image = UIImage(named: "movie-background-collage_23-2149876024")
-        image.layer.zPosition = -1
-        return image
-        
-    } ()
     
     private lazy var emailField = UITextField().withUsing {
         $0.placeholder = "Email"
-        $0.backgroundColor = .white
-        $0.setLeftPadding(10)
-        $0.layer.cornerRadius = 10
-        $0.delegate = self
         $0.layer.borderColor = UIColor.black.cgColor
         $0.layer.borderWidth = 1
         $0.anchorSize(.init(width: 0, height: 48))
@@ -30,10 +18,6 @@ final class LoginController: BaseViewController {
     
     private lazy var passField = UITextField().withUsing {
         $0.placeholder = "Password"
-        $0.backgroundColor = .white
-        $0.setLeftPadding(10)
-        $0.layer.cornerRadius = 10
-        $0.delegate = self
         $0.layer.borderColor = UIColor.black.cgColor
         $0.layer.borderWidth = 1
         $0.anchorSize(.init(width: 0, height: 48))
@@ -51,18 +35,16 @@ final class LoginController: BaseViewController {
     
     private lazy var loginButton = UIButton().withUsing {
         $0.setTitle("Login", for: .normal)
-        $0.layer.cornerRadius = 10
         $0.anchorSize(.init(width: 0, height: 48))
         $0.titleLabel?.textColor = .white
-        $0.backgroundColor = .systemBlue
+        $0.backgroundColor = .blue
     }
     
     private lazy var registerButton = UIButton().withUsing {
         $0.setTitle("Register", for: .normal)
-        $0.layer.cornerRadius = 10
         $0.anchorSize(.init(width: 0, height: 48))
         $0.titleLabel?.textColor = .white
-        $0.backgroundColor = .systemBlue
+        $0.backgroundColor = .clear
         $0.layer.borderColor = UIColor.black.cgColor
         $0.layer.borderWidth = 1
     }
@@ -86,28 +68,22 @@ final class LoginController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureView()
-        configureConstraint()
         configureViewModel()
-        configureTargets()
-       
-        
     }
     
     override func configureView() {
         super.configureView()
-        view.addSubViews(stackView, ButtonStackView, imageView)
+        view.addSubViews(stackView, ButtonStackView)
     }
     
     override func configureConstraint() {
-        imageView.fillSuperview()
         super.configureConstraint()
         stackView.anchor(
             top: view.safeAreaLayoutGuide.topAnchor,
             leading: view.leadingAnchor,
             trailing: view.trailingAnchor,
-            padding: .init(top: 280, leading: 24 , trailing: -24))
-        
+            padding: .init(all: 24)
+        )
         
         ButtonStackView.anchor(
             leading: view.leadingAnchor,
@@ -148,31 +124,21 @@ final class LoginController: BaseViewController {
     @objc
     private func registerButtonClicked() {
         viewModel.showRegister()
-//        guard let email = emailField.text,
-//              let pass = passField.text else {return}
-//        viewModel.registerRequest(email: email, password: pass)
-        
     }
     
 }
 
-extension LoginController: UITextFieldDelegate {
+extension RegisterController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        //        guard let text = textField.text else {return}
-        //        switch textField {
-        //        case emailField:
-        //            print("Email:", text)
-        //        case passField:
-        //            print("pass:", text)
-        //        default: return
-        //        }
-//        
-//        guard let email = emailField.text else {return}
-//        if email.count < 4 {
-//            showMessage()
-//        } else {
-//            
-//        }
+        guard let text = textField.text else {return}
+        switch textField {
+        case emailField:
+            print("Email:", text)
+        case passField:
+            print("pass:", text)
+        default: return
+        }
+        //TODO: Func chixart ve validationlari tetbiq et
         
     }
 }
