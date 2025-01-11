@@ -9,6 +9,14 @@ import UIKit
 final class LoginController: BaseViewController {
     private let viewModel: LoginViewModel
     
+    private lazy var mainimageView: UIImageView = {
+        let mainimage = UIImageView ()
+        mainimage.image = UIImage(named: "vtmdb")
+        mainimage.layer.zPosition = -1
+        return mainimage
+        
+    } ()
+    
     private lazy var imageView: UIImageView = {
         let image = UIImageView ()
         image.image = UIImage(named: "movie-background-collage_23-2149876024")
@@ -90,23 +98,27 @@ final class LoginController: BaseViewController {
         configureTargets()
         configureConstraint()
         configureViewModel()
-       
-        
     }
     
     override func configureView() {
         super.configureView()
-        view.addSubViews(stackView, ButtonStackView, imageView)
+        view.addSubViews(stackView, ButtonStackView, imageView, mainimageView)
     }
     
     override func configureConstraint() {
         imageView.fillSuperview()
-        super.configureConstraint()
+        mainimageView.anchor(
+            top: view.safeAreaLayoutGuide.topAnchor,
+            leading: view.leadingAnchor,
+            trailing: view.trailingAnchor,
+            padding: .init(top: 80, leading: 44, bottom: -54,  trailing: -44));
+            super.configureConstraint()
+       
         stackView.anchor(
             top: view.safeAreaLayoutGuide.topAnchor,
             leading: view.leadingAnchor,
             trailing: view.trailingAnchor,
-            padding: .init(top: 280, leading: 24 , trailing: -24))
+            padding: .init(top: 200, leading: 24 , trailing: -24))
         
         
         ButtonStackView.anchor(

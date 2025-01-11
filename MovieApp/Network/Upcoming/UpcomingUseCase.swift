@@ -9,3 +9,4 @@ import Foundation
 protocol UpcomingUseCase {
     func getUpcomingMovie(completion: @escaping(UpcomingDTO?, String?) -> Void?)
 }
+
