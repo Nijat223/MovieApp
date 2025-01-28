@@ -74,6 +74,9 @@
 		CAD983552D2C51350071FEBF /* TopRatedSegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983542D2C51350071FEBF /* TopRatedSegmentCell.swift */; };
 		CAD983572D2C59330071FEBF /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983562D2C59330071FEBF /* RegisterController.swift */; };
 		CAD983592D2C596B0071FEBF /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983582D2C596B0071FEBF /* RegisterViewModel.swift */; };
+		CAD983832D47E7600071FEBF /* MovieDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983822D47E7600071FEBF /* MovieDetailController.swift */; };
+		CAD983852D47E7930071FEBF /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983842D47E7930071FEBF /* MovieDetailViewModel.swift */; };
+		CAD983872D47E96F0071FEBF /* HomeNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983862D47E96F0071FEBF /* HomeNavigation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +163,9 @@
 		CAD983542D2C51350071FEBF /* TopRatedSegmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedSegmentCell.swift; sourceTree = "<group>"; };
 		CAD983562D2C59330071FEBF /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		CAD983582D2C596B0071FEBF /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		CAD983822D47E7600071FEBF /* MovieDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailController.swift; sourceTree = "<group>"; };
+		CAD983842D47E7930071FEBF /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
+		CAD983862D47E96F0071FEBF /* HomeNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,9 +346,10 @@
 		CAD982D92D1E659D0071FEBF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CAD982DA2D1E65CE0071FEBF /* HomeCoordinator.swift */,
+				CAD983862D47E96F0071FEBF /* HomeNavigation.swift */,
 				CAD982F12D27E17F0071FEBF /* Views */,
 				CAD982EE2D268ED30071FEBF /* Models */,
-				CAD982DA2D1E65CE0071FEBF /* HomeCoordinator.swift */,
 				CAD982DC2D1E66900071FEBF /* ViewModules */,
 			);
 			path = Home;
@@ -351,8 +358,8 @@
 		CAD982DC2D1E66900071FEBF /* ViewModules */ = {
 			isa = PBXGroup;
 			children = (
-				CAD9828B2D1B0D1E0071FEBF /* HomeController.swift */,
-				CAD982DD2D1E66BA0071FEBF /* HomeViewModel.swift */,
+				CAD983812D47E70D0071FEBF /* MovieDetail */,
+				CAD983802D47D8D90071FEBF /* HomeController */,
 			);
 			path = ViewModules;
 			sourceTree = "<group>";
@@ -552,6 +559,24 @@
 			path = ViewModules;
 			sourceTree = "<group>";
 		};
+		CAD983802D47D8D90071FEBF /* HomeController */ = {
+			isa = PBXGroup;
+			children = (
+				CAD9828B2D1B0D1E0071FEBF /* HomeController.swift */,
+				CAD982DD2D1E66BA0071FEBF /* HomeViewModel.swift */,
+			);
+			path = HomeController;
+			sourceTree = "<group>";
+		};
+		CAD983812D47E70D0071FEBF /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CAD983822D47E7600071FEBF /* MovieDetailController.swift */,
+				CAD983842D47E7930071FEBF /* MovieDetailViewModel.swift */,
+			);
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -702,6 +727,7 @@
 				CAD9833B2D2B17390071FEBF /* UpcomingAPIService.swift in Sources */,
 				CAD983452D2C28480071FEBF /* PopularSegmentCell.swift in Sources */,
 				CAD982D82D1E60970071FEBF /* TabBarController.swift in Sources */,
+				CAD983832D47E7600071FEBF /* MovieDetailController.swift in Sources */,
 				CAD983272D2B162C0071FEBF /* NowPlayingUseCase.swift in Sources */,
 				CAD983392D2B17260071FEBF /* UpcomingUseCase.swift in Sources */,
 				CAD983532D2C50990071FEBF /* UpcomingSegmentCell.swift in Sources */,
@@ -737,6 +763,7 @@
 				CAD982F02D268EEE0071FEBF /* MovieDTO.swift in Sources */,
 				CAD9831B2D2B133A0071FEBF /* PopularDTO.swift in Sources */,
 				CAD9833E2D2C13E10071FEBF /* SearchCoordinator.swift in Sources */,
+				CAD983872D47E96F0071FEBF /* HomeNavigation.swift in Sources */,
 				CAD982C02D1B0F720071FEBF /* Extensions.swift in Sources */,
 				CAD982F32D27E1A30071FEBF /* MovieCell.swift in Sources */,
 				CAD983432D2C143A0071FEBF /* SearchViewModel.swift in Sources */,
@@ -750,6 +777,7 @@
 				CAD983412D2C140F0071FEBF /* SearchController.swift in Sources */,
 				CAD982D12D1B165C0071FEBF /* Coordinator.swift in Sources */,
 				CAD983252D2B16170071FEBF /* NowPlayingHelper.swift in Sources */,
+				CAD983852D47E7930071FEBF /* MovieDetailViewModel.swift in Sources */,
 				CAD983592D2C596B0071FEBF /* RegisterViewModel.swift in Sources */,
 				CAD983352D2B16F80071FEBF /* TopRatedAPIService.swift in Sources */,
 				CAD982FE2D2840570071FEBF /* TrandingSectionCell.swift in Sources */,

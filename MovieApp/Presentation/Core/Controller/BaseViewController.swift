@@ -20,5 +20,4 @@ class BaseViewController: UIViewController {
     open func configureView() {}
     open func configureConstraint() {}
     open func configureTargets() {}
-
 }

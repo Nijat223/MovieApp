@@ -15,7 +15,7 @@ final class AppCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     
-    var isLogin: Bool = false
+    var isLogin: Bool = true
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
