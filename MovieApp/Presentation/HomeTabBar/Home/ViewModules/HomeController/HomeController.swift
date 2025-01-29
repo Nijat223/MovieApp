@@ -223,20 +223,20 @@
         func collectionView(
             _ collectionView: UICollectionView,
             didSelectItemAt indexPath: IndexPath) {
-                print(#function, indexPath.section, indexPath.item)
+                viewModel.navigateDetail(indexPath: indexPath)
             }
         
-    //    func collectionView(
-    //        _ collectionView: UICollectionView,
-    //        viewForSupplementaryElementOfKind kind: String,
-    //        at indexPath: IndexPath
-    //    ) -> UICollectionReusableView {
-    //        let header: SectionHeader = collectionView.dequeue(header: SectionHeader.self, for: indexPath)
-    ////            let header = collectionView.dequeueReusableSupplementaryView(ofKind: "header", withReuseIdentifier: "SectionHeader", for: indexPath) as! SectionHeader
-    //        return header
-    //
-    //
-    //    }
+        func collectionView(
+            _ collectionView: UICollectionView,
+            viewForSupplementaryElementOfKind kind: String,
+            at indexPath: IndexPath
+        ) -> UICollectionReusableView {
+            let header: SectionHeader = collectionView.dequeue(header: SectionHeader.self, for: indexPath)
+    //            let header = collectionView.dequeueReusableSupplementaryView(ofKind: "header", withReuseIdentifier: "SectionHeader", for: indexPath) as! SectionHeader
+            return header
+    
+    
+        }
     }
 
     extension HomeController: TrandingSectionCellProtocol {

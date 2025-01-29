@@ -40,13 +40,16 @@ final class HomeViewModel {
 
     
     var requestCallBack: ((ViewState) -> Void)?
-    init() {
+    
+    weak var navigation: HomeNavigation?
+    
+    init(navigation: HomeNavigation) {
         trendingUse = TrendingAPIService()
         popularUse = PopularAPIService()
         nowplayingUse = NowPlayingAPIService()
         topratedUse = TopRatedAPIService()
         upcomingUse = UpcomingAPIService()
-
+        self.navigation = navigation
 
     }
     
@@ -75,6 +78,23 @@ final class HomeViewModel {
                     requestCallBack?(.error(error))
                 }
             }
+    }
+    
+    //MARK: Coordinator
+    
+    func navigateDetail(indexPath: IndexPath) {
+        switch indexPath.section {
+        case 1:
+           guard let detail = getTrandingMovie(index: indexPath.row)?.mapToDetail() else {return}
+            showDetail(detail: detail)
+        default:
+            print(indexPath, #function)
+            return
+        }
+    }
+    
+    func showDetail (detail: MovieDetail) {
+        navigation?.showMovieDetail(detail: detail)
     }
     
     //MARK: Popular

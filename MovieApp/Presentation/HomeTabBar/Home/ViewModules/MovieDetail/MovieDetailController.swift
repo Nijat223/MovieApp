@@ -13,6 +13,7 @@ final class MovieDetailController: BaseViewController {
         $0.image = UIImage(named: "Poster")
         $0.layer.cornerRadius = 12
         $0.layer.masksToBounds = true
+        $0.anchorSize(.init(width: 120, height: 120))
     }
     
     private lazy var titleLabel = UILabel().withUsing {
@@ -24,12 +25,28 @@ final class MovieDetailController: BaseViewController {
     
     private lazy var stackView: UIStackView = {
         let s = UIStackView(arrangedSubviews: [movieImage, titleLabel])
-        s.alignment = .fill
+        s.alignment = .center
+        s.distribution = .fill
+        s.axis = .horizontal
+        s.spacing = 12
+        return s
+    }()
+    
+    private lazy var fullStackView: UIStackView = {
+        let s = UIStackView(arrangedSubviews: [stackView, showTrailerButton])
+        s.alignment = .leading
         s.distribution = .fill
         s.axis = .vertical
         s.spacing = 12
         return s
     }()
+    
+    private lazy var showTrailerButton = UIButton().withUsing {
+        $0.setTitle("Show", for: .normal)
+        $0.anchorSize(.init(width: 0, height: 24))
+        $0.tintColor = .white
+        $0.backgroundColor = .blue
+    }
     
     private let viewModel: MovieDetailViewModel
 
@@ -49,12 +66,14 @@ final class MovieDetailController: BaseViewController {
     
     override func configureView() {
         super.configureView()
-        view.addSubViews(stackView)
+        view.addSubViews(fullStackView)
+        movieImage.loadImageURL(url: viewModel.getDetail().icon)
+        titleLabel.text = viewModel.getDetail().title
     }
     
     override func configureConstraint() {
         super.configureConstraint()
-        stackView.anchor(
+        fullStackView .anchor(
             top: view.safeAreaLayoutGuide.topAnchor,
             leading: view.leadingAnchor,
             trailing: view.trailingAnchor,
@@ -65,9 +84,7 @@ final class MovieDetailController: BaseViewController {
     
     override func configureTargets() {
         super.configureTargets()
-//        loginButton.addTarget(self, action: #selector(loginButtonClicked), for: .touchUpInside)
-//        registerButton.addTarget(self, action: #selector(registerButtonClicked), for: .touchUpInside)
-
+        showTrailerButton.addTarget(self, action: #selector(showTrailerClicked ), for: .touchUpInside)
     }
     
     private func configureViewModel() {
@@ -86,8 +103,8 @@ final class MovieDetailController: BaseViewController {
         }
     }
     @objc
-    private func loginButtonClicked() {
-        
+    private func showTrailerClicked() {
+        viewModel.showTrailer()
     }
     
 }

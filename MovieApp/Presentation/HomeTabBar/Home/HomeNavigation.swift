@@ -8,5 +8,6 @@
 import Foundation
 
 protocol HomeNavigation: AnyObject {
-    func showMovieDetail ()
+    func showMovieDetail (detail: MovieDetail)
+    func showTrailer(url: String)
 }

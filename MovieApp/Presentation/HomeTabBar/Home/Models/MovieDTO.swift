@@ -79,3 +79,18 @@ extension MovieResult: MovieCellProtocol {
         imageBasePath + (posterPath ?? "")
     }
 }
+
+
+//MARK: MovieDetail
+
+extension MovieResult {
+    func mapToDetail() -> MovieDetail{
+        .init(
+            icon: iconURL,
+            title: titleString,
+            releaseDate: releaseDate ?? "",
+            mediaType: mediaType ?? ""
+        )
+    }
+        
+}

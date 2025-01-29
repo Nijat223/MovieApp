@@ -20,7 +20,21 @@ final class HomeCoordinator: Coordinator {
     }
     
     func start() {
-        let controller = HomeController(viewModel: .init())
+        let controller = HomeController(viewModel: .init(navigation: self))
         showController(vc: controller)
     }
 } 
+
+extension HomeCoordinator: HomeNavigation {
+    func showMovieDetail(detail: MovieDetail) {
+        let controller = MovieDetailController(viewModel: .init(navigation: self, movieDetail: detail))
+        controller.hidesBottomBarWhenPushed = true
+//        navigationController.setNavigationBarHidden(true, animated: false)
+        showController(vc: controller)
+    }
+    
+    func showTrailer(url: String) {
+        showWebPage(with: url)
+    }
+    
+}

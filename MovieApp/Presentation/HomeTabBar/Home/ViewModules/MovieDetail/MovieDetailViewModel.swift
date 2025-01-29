@@ -18,9 +18,16 @@ final class MovieDetailViewModel {
     private weak var navigation: HomeNavigation?
     
     var requestCallBack: ((ViewState) -> Void)?
-    
-    init(navigation: HomeNavigation) {
+    private var movieDetail: MovieDetail
+    init(navigation: HomeNavigation,
+         movieDetail: MovieDetail
+    ) {
         self.navigation = navigation
+        self.movieDetail = movieDetail
+    }
+    
+    func getDetail() -> MovieDetail {
+        movieDetail
     }
     
     func request() {
@@ -35,6 +42,7 @@ final class MovieDetailViewModel {
     //MARK: Coordinator
     
     func showTrailer() {
+        navigation?.showTrailer(url: "https://www.youtube.com/watch?v=JdSl4RMNtGE&t=3s")
     }
 
     
