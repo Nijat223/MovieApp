@@ -78,6 +78,7 @@
 		CAD983852D47E7930071FEBF /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983842D47E7930071FEBF /* MovieDetailViewModel.swift */; };
 		CAD983872D47E96F0071FEBF /* HomeNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983862D47E96F0071FEBF /* HomeNavigation.swift */; };
 		CAD983892D4A12430071FEBF /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD983882D4A12430071FEBF /* MovieDetail.swift */; };
+		CAD9838B2D4A96160071FEBF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9838A2D4A96160071FEBF /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +169,7 @@
 		CAD983842D47E7930071FEBF /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
 		CAD983862D47E96F0071FEBF /* HomeNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigation.swift; sourceTree = "<group>"; };
 		CAD983882D4A12430071FEBF /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
+		CAD9838A2D4A96160071FEBF /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				CAD982C32D1B10330071FEBF /* BaseViewController.swift */,
+				CAD9838A2D4A96160071FEBF /* WebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -769,6 +772,7 @@
 				CAD9833E2D2C13E10071FEBF /* SearchCoordinator.swift in Sources */,
 				CAD983872D47E96F0071FEBF /* HomeNavigation.swift in Sources */,
 				CAD982C02D1B0F720071FEBF /* Extensions.swift in Sources */,
+				CAD9838B2D4A96160071FEBF /* WebViewController.swift in Sources */,
 				CAD982F32D27E1A30071FEBF /* MovieCell.swift in Sources */,
 				CAD983432D2C143A0071FEBF /* SearchViewModel.swift in Sources */,
 				CAD982C42D1B10330071FEBF /* BaseViewController.swift in Sources */,

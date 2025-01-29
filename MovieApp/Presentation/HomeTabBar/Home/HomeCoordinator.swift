@@ -29,12 +29,14 @@ extension HomeCoordinator: HomeNavigation {
     func showMovieDetail(detail: MovieDetail) {
         let controller = MovieDetailController(viewModel: .init(navigation: self, movieDetail: detail))
         controller.hidesBottomBarWhenPushed = true
-//        navigationController.setNavigationBarHidden(true, animated: false)
+        navigationController.setNavigationBarHidden(true, animated: false)
         showController(vc: controller)
     }
     
     func showTrailer(url: String) {
-        showWebPage(with: url)
+        let controller = WebViewController(url: url)
+        navigationController.show(controller, sender: nil)
+//        showWebPage(with: url)
     }
     
 }
